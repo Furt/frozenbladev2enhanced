@@ -30,7 +30,7 @@
 
 </center>
 &nbsp;				Realmlist:
-<center>						demo-realmlist.org
+<center>						<?php echo $config['RealmIP']; ?>
 </center><br/>
 
 </font><div class="vote"></div><center><font class="style10">

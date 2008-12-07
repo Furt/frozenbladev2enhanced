@@ -53,6 +53,8 @@
  * 
  *********************************************************************************************/
 
+	$config['Title'] = "MySite";
+	$config['Sitename'] = "yoursite.com";
     $config['PageTitleACS'] = "Account Creation";
 	$config['PageTitlePCS'] = "Password Change";
 	$config['PageTitleFPS'] = "Forgotten Password";
