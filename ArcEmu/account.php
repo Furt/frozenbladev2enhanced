@@ -1,14 +1,16 @@
 // Project Name: FrozenBlade V2 Enhanced"
 // Date: 25.07.2008 inital version
-// Author: Furt
-// Copyright: Kitten
+// Coded by: Furt
+// Developed by: Kitten
 // Email: *****
 // License: GNU General Public License (GPL)
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<!-- Addon Script made by Furt -->
-<title>FrozenBlade Template by Kitten @ WoWps.org</title>
+<?php
+require_once('./includes/config.php')
+?>
+<title><?php  echo $config['Title']; ?></title>
 
 <link rel="shortcut icon" href="images/favicon.ico">
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -23,65 +25,11 @@
 <div class="banner"></div>
 
 
-<div class="bar"></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr><td width="144" valign="top"><div id="links"><font class="style9">
-
-
-<div class="menu"></div>
-	
-	
-		<!-- Menu Links -->
-	
-				<li><a href="home.php">Home</a></li><br/><br/>
-				<li><a href="recentposts.php">Recent Posts</a></li><br/><br/>
-				<li><a href="donate.php">Make a Donation</a></li><br/><br/>
-				<li><a href="connect.php">Connection Guide</a></li><br/><br/>
-				<li><a href="staff.php">Staff Members</a></li><br/><br/>
-	
-		<!-- --------- -->
-		
-			
-<div class="account"></div>
-	 
-		
-		<!-- Account Links-->
-			
-				<li><a href="account.php">Create Account</a></li><br/><br/>
-				<li><a href="banchecker.php">Ban Checker</a></li><br/><br/>
-				<li><a href="ipban.php">IP Ban Checker</a></li><br/><br/>
-		
-		<!-- --------- -->		
-		
-			
-<div class="workshop"></div>
-				
-		
-		<!-- Workshop Links -->
-			
-				<li><a href="vote.php">Vote Page</a></li><br/><br/>
-				<li><a href="votecp.php">Vote Panel</a></li><br/><br/>
-				<li><a href="unstucker.php">Unstucker</a></li><br/><br/>
-				<li><a href="tele.php">Teleporter</a></li><br/><br/>
-				<li><a href="stats.php">Status Page</a></li><br/><br/>
-				<li><a href="honor.php">Honor Page</a></li><br/><br/>
-		
-		<!-- --------- -->
-			
-			
-<div class="forum"></div>
-			
-
-		<!-- Forum Links -->
-			
-				<li><a href="./forum">Forum Home</a></li><br/><br/>
-				<li><a href="./forum">Bug Reporting</a></li><br/><br/>
-				<li><a href="./forum">Announcements</a></li><br/><br/>
-				<li><a href="./forum">General Chat</a></li><br/><br/>
-				<li><a href="./forum">General Support</a></li><br/><br/>
-				
-		<!-- --------- -->	
-	
-	
-</font></div><br/></td><td width="430" valign="top">
+<div class="bar"></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
+<?php
+include('./includes/leftnavi.php')
+?>
+<td width="430" valign="top">
 
 <div class="story-top"><div align="center">
 <br/><br/><br/><br/><br/><br/><img src="images/text/account.png">
@@ -91,7 +39,6 @@
       <div align="center">
   <!-- account script start -->
   <?php
-include 'config.php';
 
 error_reporting(E_ALL ^ E_NOTICE);
 
@@ -263,84 +210,8 @@ if(!empty($_POST)){
 
 <!-- End News Post -->
 
-<br /></td><td width="144" valign="top">
-
-
-	<!-- Create Account Image/Link -->
-		
-		<a href="account.php"><div class="join"></div></a>
-
-	<!-- --------- -->
-
-
-<div class="stats"></div><font class="style30"><center>
-
-
-			<!-- Server Online/Offline Status PHP Script -->
-
-					<?php    
-							
-							if (! $sock = @fsockopen($ip, $port, $num, $error, 5))
-								echo "<img src='images/temp/server-off.png'>";
-							else{
-								echo "<img src='images/temp/server-on.png'>";
-								fclose($sock);
-								}      
-            		?>
-
-			<!-- PHP Script Created by DJRavine -->
-
-
-
-</center>
-&nbsp;				Realmlist:
-<center>						logon.crimson-storm.net
-</center><br/>
-
-</font><div class="vote"></div><center><font class="style10">
-			
-
-	<!-- Vote Links -->
-
-		<a href="http://www.xtremetop100.com/world-of-warcraft/" target="_blank">
-		<img src="images/friends+vote/xtremetop.jpg" border="0" class="opacity1"
-		onmouseover="this.className='opacity2'" onmouseout="this.className='opacity1'">
-		</a><br/><br/>
-		
-		<a href="http://www.wowserverslist.com/" target="_blank">
-		<img src="images/friends+vote/wowservers.png" border="0" class="opacity1"
-		onmouseover="this.className='opacity2'" onmouseout="this.className='opacity1'">
-		</a><br/><br/>
-
-	<!-- --------- -->
-
-
-<br/></font></center><div class="affiliation"></div><font class="style10"><center>
-			
-
-	<!-- Affiliation Links -->
-		
-		<a href="http://wowps.org/forum/">
-		<img src="images/friends+vote/wowps.jpg" border="0" class="opacity1"
-		onmouseover="this.className='opacity2'" onmouseout="this.className='opacity1'">
-		</a><br/><br/>
-		
-		<a href="http://virtue.nadasoft.net/">
-		<img src="images/friends+vote/virtue.jpg" border="0" class="opacity1"
-		onmouseover="this.className='opacity2'" onmouseout="this.className='opacity1'">
-		</a><br/><br/>
-		
-		<a href="http://nadacod4.com/">
-		<img src="images/friends+vote/nadacod4.gif" border="0" class="opacity1"
-		onmouseover="this.className='opacity2'" onmouseout="this.className='opacity1'">
-		</a><br/><br/>
-		
-		<a href="http://nadasoft.net/">
-		<img src="images/friends+vote/nadasoft.jpg" border="0" class="opacity1"
-		onmouseover="this.className='opacity2'" onmouseout="this.className='opacity1'">
-		</a><br/><br/>
-
-	<!-- --------- -->
-	
-
-</font><br/><br/><br/><br/></center></td></tr></table></div><div class="bottom"></div></div><div align="center" class="bot"><font class="style20"><br/></font><font class="style30">Copyright 2008 © <a href="http://wowps.org/forum">WoWps.org</a> and yoursite.net. All rights reserved.<br />Designed and Coded by <a href="http://wowps.org/forum/member-kitten.html">Kitten</a> @ <a href="http://wowps.org/forum">WoWps.org</a></font></div></body></html>
+<br /></td>
+<?php
+include('./includes/rightnavi.php')
+?>
+</tr></table></div><div class="bottom"></div></div><div align="center" class="bot"><font class="style20"><br/></font><font class="style30">Copyright 2008 © <a href="http://wowps.org/forum">WoWps.org</a> and <?php  echo $config['Sitename']; ?>. All rights reserved.<br />Designed by <a href="http://wowps.org/forum/member-kitten.html">Kitten</a> and Coded by <a href="http://wowps.org/forum/member-furt.html">Furt</a> @ <a href="http://wowps.org/forum">WoWps.org</a></font></div></body></html>

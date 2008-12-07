@@ -1,8 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
-<title>FrozenBlade Template by Kitten @ WoWps.org</title>
+<?php
+require_once('./includes/config.php')
+?>
+<title><?php  echo $config['Title']; ?></title>
 
 <link rel="shortcut icon" href="images/favicon.ico">
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -17,65 +19,11 @@
 <div class="banner"></div>
 
 
-<div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr><td width="144" valign="top"><div id="links"><font class="style10">
-
-<div class="menu"></div>
-	
-	
-		<!-- Menu Links -->
-	
-				<li><a href="home.php">Home</a></li><br/><br/>
-				<li><a href="donate.php">Make a Donation</a></li><br/><br/>
-				<li><a href="connect.php">Connection Guide</a></li><br/><br/>
-				<li><a href="staff.php">Staff Members</a></li><br/><br/>
-	
-		<!-- --------- -->
-		
-			
-<div class="account"></div>
-	 
-		
-		<!-- Account Links-->
-			
-				<li><a href="#">Create Account</a></li><br/><br/>
-				<li><a href="#">Change Password</a></li><br/><br/>
-				<li><a href="#">Get Password</a></li><br/><br/>
-				<li><a href="#">Ban Checker</a></li><br/><br/>
-				<li><a href="#">IP Ban Checker</a></li><br/><br/>
-		
-		<!-- --------- -->		
-		
-			
-<div class="workshop"></div>
-				
-		
-		<!-- Workshop Links -->
-			
-				<li><a href="#">Vote Page</a></li><br/><br/>
-				<li><a href="#">Vote Panel</a></li><br/><br/>
-				<li><a href="#">Unstucker</a></li><br/><br/>
-				<li><a href="#">Teleporter</a></li><br/><br/>
-				<li><a href="#">Status Page</a></li><br/><br/>
-				<li><a href="#">Honor Page</a></li><br/><br/>
-		
-		<!-- --------- -->
-			
-			
-<div class="forum"></div>
-			
-
-		<!-- Forum Links -->
-			
-				<li><a href="#">Forum Home</a></li><br/><br/>
-				<li><a href="#">Bug Reporting</a></li><br/><br/>
-				<li><a href="#">Announcements</a></li><br/><br/>
-				<li><a href="#">General Chat</a></li><br/><br/>
-				<li><a href="#">General Support</a></li><br/><br/>
-				
-		<!-- --------- -->
-			
-	
-</font></div><br><a href="http://wowps.org/forum"><div class="by"></div></a></td><td width="574" valign="top">
+<div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
+<?php
+include('./includes/leftnavi.php')
+?>
+<td width="574" valign="top">
 
 <div class="story-top8">
 
@@ -101,14 +49,14 @@ This guide will show you how to configure your World of Warcraft client so you c
 	
 <img src="images/temp/icon.gif"><strong> Install World of Warcraft</strong><br><br>
 
-First you must make sure you have both World of Warcaft and The Burning Crusade Expansion installed.<br><br>
+First you must make sure you have World of Warcaft and both expansions installed.<br><br>
 You can get this either by buying it in gaming shops or you will find that there are downloads around which can be found.<br><br>
-Here are two direct installers:<br><br>
+Here is the direct installer for classic and both expansions:<br><br>
 
 
 			<!-- Official Installers Download Links -->
 		
-<center><a href="download/wowclient-downloader.exe" onMouseOver="image1.src='images/text/wow-installer2.png'" onMouseOut="image1.src='images/text/wow-installer.png'"><img src="images/text/wow-installer.png"; name="image1" border="0"></a><br><a href="download/WoW-BurningCrusade-enUS-Installer-downloader.exe" onMouseOver="image2.src='images/text/bc-expansion2.png'" onMouseOut="image2.src='images/text/bc-expansion.png'"><img src="images/text/bc-expansion.png"; name="image2" border="0"></a><br /><br /><img src="images/temp/br.png"></center>
+<center><a href="download/InstalWoW.exe" onMouseOver="image1.src='images/text/wow-installer2.png'" onMouseOut="image1.src='images/text/wow-installer.png'"><img src="images/text/wow-installer.png"; name="image1" border="0"></a><br /><br /><img src="images/temp/br.png"></center>
 
 		
 			<!-- Download and Install Patches -->		
@@ -120,7 +68,7 @@ To make sure your client is running the same supported version as our server you
 
 		<!-- Enter Your Supported Version Here -->
 
-<center><font color="#FFFFFF">			Supported Version: x.x.x				</font></center><br>
+<center><font color="#FFFFFF">			Supported Version: <?php echo $config['PatchVersion']; ?>				</font></center><br>
 
 
 		<!-- Patch Download Links -->
@@ -142,7 +90,7 @@ Now go to the folder which you installed World of Warcraft, open the file called
 
 		<!-- Put Your Server Realmlist Here -->
 
-<center><font color="#FFFFFF">			set realmlist demo.realmlist.org			</font><br/><br/></center>
+<center><font color="#FFFFFF">			set realmlist  <?php echo $config['RealmIP']; ?>			</font><br/><br/></center>
 
 
 Then save the file and close.<br><br>
@@ -167,4 +115,4 @@ Please wait up to at most 10 minutes before your new account will be loaded into
 
 
 
-</div></center></div><div class="story-bot2"></div><br /></td></tr></table></div><div class="bottom"></div></div><div align="center" class="bot"><font class="style20"><br/></font><font class="style30">Copyright 2008 © <a href="http://wowps.org/forum">WoWps.org</a> and Yoursite.com. All rights reserved.<br />Designed and Coded by <a href="http://wowps.org/forum/member-kitten.html">Kitten</a> @ <a href="http://wowps.org/forum">WoWps.org</a></font></div></body></html>
+</div></center></div><div class="story-bot2"></div><br /></td></tr></table></div><div class="bottom"></div></div><div align="center" class="bot"><font class="style20"><br/></font><font class="style30">Copyright 2008 © <a href="http://wowps.org/forum">WoWps.org</a> and <?php  echo $config['Sitename']; ?>. All rights reserved.<br />Designed by <a href="http://wowps.org/forum/member-kitten.html">Kitten</a> and Coded by <a href="http://wowps.org/forum/member-furt.html">Furt</a> @ <a href="http://wowps.org/forum">WoWps.org</a></font></div></body></html>
