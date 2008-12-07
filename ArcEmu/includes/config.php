@@ -5,7 +5,7 @@
  *      Port - The port used for connection to the server
  * 
  *********************************************************************************************/
-	$ip = "your.server.com";
+	$ip = "logon.crimson-storm.net";
 	$port = "8093";
  /******* DATABASE SETTINGS *******************************************************************
  *
@@ -18,7 +18,7 @@
  
     $config['mysql_host'] = 'localhost';
     $config['mysql_user'] = 'root';
-    $config['mysql_pass'] = 'pass';
+    $config['mysql_pass'] = 'danielle';
     $config['mysql_dbname'] = 'logon';
 	
 /******* IP & Ban Checker, Tele & Unstucker Settings **************************************************
@@ -32,12 +32,12 @@
 	$aDatabase="character";
 	$aPort="3306";
 	$aUsername="root";
-	$aPass="pass";
+	$aPass="danielle";
 	$cHost="localhost";
 	$cDatabase="logon";
 	$cPort="3306";
 	$cUsername="root";
-	$cPass="pass";
+	$cPass="danielle";
 	// Teleporter Settings
 	//default = 50g/teleport. ex -  $TELEPORT_COST = 954, would mean 954 gold per transport
 	$TELEPORT_COST = 50;
@@ -59,7 +59,7 @@
     $config['MaxIPs'] = '4';
     $config['MaxEmails'] = '0';
     $config['EncryptedPass'] = '0';
-    $config['RealmIP'] = 'your.realmlist.com';
+    $config['RealmIP'] = 'logon.crimson-storm.net';
     $config['PatchVersion'] = '3.0.3 WotLK';
 	
 /******* EMAIL SETTINGS **********************************************************************
@@ -70,6 +70,6 @@
  *********************************************************************************************/
 
     $config['EnableEmail'] = false;
-    $config['SiteEmail'] = "noreply@youremail.com";
+    $config['SiteEmail'] = "admin@crimson-storm.net";
     
 ?>
