@@ -5,9 +5,10 @@
  *      Port - The port used for connection to the server
  * 
  *********************************************************************************************/
-	$ip = "logon.crimson-storm.net";
+	$ip = "your.realmlist.com";
 	$port = "8093";
- /******* DATABASE SETTINGS *******************************************************************
+	
+ /******* Account Creation Settings *******************************************************************
  *
  *      mysql_host - MySQL Host Address
  *      mysql_user - MySQL Username
