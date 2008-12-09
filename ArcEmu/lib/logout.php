@@ -5,5 +5,5 @@ session_unset();
 session_destroy();
 	// Change the page where redirect an user
 	// after logout.
-		redirect('../login-form.php');
+		redirect('../home.php');
 ?>
