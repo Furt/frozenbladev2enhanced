@@ -88,7 +88,7 @@ function addUser(){
     # Connect to database
     $db = @mysql_connect($config['mysql_host'], $config['mysql_user'], $config['mysql_pass']);
     if (!$db) return $error[] = 'Database: '.mysql_error();
-    if (!@mysql_select_db($config['mysql_dbname'], $db)) return $error[] = 'Database: '.mysql_error();
+    if (!@mysql_select_db($config['mysql_account'], $db)) return $error[] = 'Database: '.mysql_error();
 
     # Check make sure user isnt ipbanned 
     $BanCheck = mysql_query("SELECT * FROM ipbans WHERE ip = '$ip' || ip = '$ip/32' LIMIT 1");
