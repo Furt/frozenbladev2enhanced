@@ -3,14 +3,14 @@
 include('config.php'); 
 include('common-functions.php');
 
-if(isset($_POST['email']) && isset($_POST['psw'])){ 
+if(isset($_POST['login']) && isset($_POST['psw'])){ 
 
 		// Clean Input
-		$email		=	cleanInput($_POST['email']);
+		$login		=	cleanInput($_POST['login']);
 		$psw		=	cleanInput($_POST['psw']);
 		
 		// Verify login
-		$login_sql	=	'SELECT * FROM USER WHERE EMAIL ="'.$email.'" AND PSW ="'.$psw.'"';
+		$login_sql	=	'SELECT * FROM accounts WHERE login ="'.$login.'" AND password ="'.$psw.'"';
 		$login		=	mysql_query($login_sql);
 				
 		if(mysql_num_rows($login)>0){
@@ -22,13 +22,13 @@ if(isset($_POST['email']) && isset($_POST['psw'])){
 				$_SESSION['id']		=	session_id();
 				$_SESSION['userid']	=	$userid;
 				// Set te page where redirect the user after the login
-				redirect('../login-form.php?login=ok');
+				redirect('../home.php?login=ok');
 			}
 		} else {
 			echo $ciao;
 			// in case of error set this var = 1.
 			// a red box will appear in the page where is the login-form
-				redirect('../login-form.php?error=1');
+				redirect('../home.php?error=1');
 		}
 }
 ?>

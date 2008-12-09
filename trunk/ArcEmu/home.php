@@ -22,13 +22,14 @@ require_once('./lib/config.php')
 
 </head><body>
 
-<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
+<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container">
+<div class="top"></div>
 
 
 <div class="banner"></div>
 
 
-<div class="bar"></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
+<div class="bar"><br /><center><?php include('login-form.php') ?></center></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
 include('./lib/leftnavi.php')
 ?>

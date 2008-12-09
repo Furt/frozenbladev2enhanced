@@ -15,8 +15,8 @@
 
 <!-- Login Basic Form -->
 <form name="login" action="lib/login.php" method="post">
-    <label>Email</label>
-    <input name="email" type="text" size="14" />
+    <label>Username</label>
+    <input name="login" type="text" size="14" />
     <label>Password</label>
     <input name="psw" type="text" size="14" />
     <input type="submit" name="button" id="button" value="Login" />
