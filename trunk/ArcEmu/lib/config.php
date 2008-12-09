@@ -81,8 +81,8 @@
 
 	// DON'T CHANGE THE FOLLOWING CODE!
 	$db_con=mysql_connect($config['mysql_host'],$config['mysql_user'],$config['mysql_pass']);
-	$connection_string=mysql_select_db($db_name);
-	mysql_connect($db_host,$username,$password);
-	mysql_select_db($config['mysql_world']);
+	$connection_string=mysql_select_db($config['mysql_account']);
+	mysql_connect($config['mysql_host'],$config['mysql_user'],$config['mysql_pass']);
+	mysql_select_db($config['mysql_account']);
 
 ?>
