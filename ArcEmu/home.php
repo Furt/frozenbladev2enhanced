@@ -30,7 +30,7 @@ require_once('./lib/config.php')
 <div class="banner"></div>
 
 
-<div class="bar"><br /><center><?php include('login-form.php') ?></center></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
+<div class="bar"><br /><center></center></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
 include('./lib/leftnavi.php')
 ?>
