@@ -14,7 +14,7 @@
  *      Port - The port used for connection to the server
  * 
  *********************************************************************************************/
-	$ip = "your.site.com";
+	$ip = "logon.crimson-storm.net";
 	$port = "8093";
 	
  /******* Account Creation Settings **********************************************************
@@ -29,7 +29,7 @@
     $config['mysql_host'] = 'localhost';
 	$config['mysql_port'] = '3306';
     $config['mysql_user'] = 'root';
-    $config['mysql_pass'] = 'pass';
+    $config['mysql_pass'] = 'danielle';
     $config['mysql_account'] = 'logon';
 	$config['mysql_character'] = 'character';
 	$config['mysql_world'] = 'ncdb';
@@ -73,7 +73,7 @@
  *********************************************************************************************/
 
     $config['EnableEmail'] = false;
-    $config['SiteEmail'] = "noreply@yoursite.com";
+    $config['SiteEmail'] = "noreply@crimson-storm.net";
 	
 /******* Account Login Settings **************************************************************
  *

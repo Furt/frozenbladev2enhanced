@@ -7,7 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<?php
+<?php session_start(); 
 require_once('./lib/config.php')
 ?>
 <title><?php  echo $config['Title']; ?></title>
@@ -25,20 +25,20 @@ require_once('./lib/config.php')
 <div class="banner"></div>
 
 
-<div class="bar"><br /><center><?php include('login-form.php') ?></center></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
+<div class="bar"><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
 include('./lib/leftnavi.php')
 ?>
 <td width="430" valign="top">
 
 <div class="story-top"><div align="center">
-<br/><br/><br/><br/><br/><br/><img src="images/text/account.png">
+<br/><br/><br/><br/><br/><br/><img src="images/text/login.png">
 
 </div></div><div class="story"><center><div style="width:300px; text-align:left">
 
       <div align="center">
   <!-- script start -->
-<?php include('login-form.php') ?>
+<br /><br /><br /><?php include('login-form.php') ?>
           <!-- script stop -->
           
           <center><br/>
@@ -51,8 +51,6 @@ include('./lib/leftnavi.php')
 <div class="story-bot" align="center"><br/>
 
 </div>
-
-<!-- End News Post -->
 
 <br /></td>
 <?php

@@ -28,8 +28,8 @@
 		
 		<!-- Account Links-->
 			
-				<li><a href="./login.php">Account Login</a></li><br/><br/>
-                <li><a href="./account.php">Create Account</a></li><br/><br/>
+				<li><a href="login.php">Account Login</a></li><br/><br/>
+                <li><a href="account.php">Create Account</a></li><br/><br/>
 				<li><a href="#">Change Password</a></li><br/><br/>
 				<li><a href="#">Get Password</a></li><br/><br/>
 				<li><a href="#">Ban Checker</a></li><br/><br/>
