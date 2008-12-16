@@ -14,7 +14,7 @@
  *      Port - The port used for connection to the server
  * 
  *********************************************************************************************/
-	$ip = "logon.crimson-storm.net";
+	$ip = "your.site.com";
 	$port = "8093";
 	
  /******* Account Creation Settings **********************************************************
@@ -29,10 +29,10 @@
     $config['mysql_host'] = 'localhost';
 	$config['mysql_port'] = '3306';
     $config['mysql_user'] = 'root';
-    $config['mysql_pass'] = 'danielle';
+    $config['mysql_pass'] = 'pass';
     $config['mysql_account'] = 'logon';
 	$config['mysql_character'] = 'character';
-	$config['mysql_world'] = 'ncdb';
+	$config['mysql_world'] = 'world';
 	
 /******* IP & Ban Checker, Tele & Unstucker Settings **************************************************
  *
@@ -73,7 +73,7 @@
  *********************************************************************************************/
 
     $config['EnableEmail'] = false;
-    $config['SiteEmail'] = "noreply@crimson-storm.net";
+    $config['SiteEmail'] = "noreply@your-site.com";
 	
 /******* Account Login Settings **************************************************************
  *
