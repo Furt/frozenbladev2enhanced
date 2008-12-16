@@ -1,4 +1,4 @@
-// Project Name: FrozenBlade V2 Enhanced"
+// Project Name: FrozenBlade V2 Enhanced&quot;
 // Date: 25.07.2008 inital version
 // Coded by: Furt
 // Developed by: Kitten
@@ -12,14 +12,14 @@ require_once('./lib/config.php')
 ?>
 <title><?php  echo $config['Title']; ?></title>
 
-<link rel="shortcut icon" href="images/favicon.ico">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 <!--[if IE]><link href="css/ie-fix.css" rel="stylesheet" type="text/css"><![endif]-->
 <script type="text/javascript" src="./js/img-trans.js"></script>
 <script type="text/javascript" src="./js/pre-load.js"></script>
 </head><body>
 
-<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
+<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div class="container"><div class="top"></div>
 
 
 <div class="banner"></div>
@@ -32,13 +32,13 @@ include('./lib/leftnavi.php')
 <td width="430" valign="top">
 
 <div class="story-top"><div align="center">
-<br/><br/><br/><br/><br/><br/><img src="images/text/unstucker.png">
+<br/><br/><br/><br/><br/><br/><img src="images/text/unstucker.png" />
 
 </div></div><div class="story"><center><div style="width:300px; text-align:left">
 
       <div align="center">
   <!-- script start -->
-<br><br><br>
+<br /><br /><br />
 <?php
 //if unstuck button is pressed, verify and query db if valid
 if(isset($_POST['submit']))
@@ -101,7 +101,7 @@ if(isset($_POST['submit']))
 	<center>
 	<br />
 	<br />
-	The Character with the name '<b><?php echo "$character"; ?></b>' under Account '<b><?php echo "$account"; ?></b>' has been unstuck!<br>
+	The Character with the name '<b><?php echo "$character"; ?></b>' under Account '<b><?php echo "$account"; ?></b>' has been unstuck!<br />
 	<a href='javascript:history.go(-1)'>Back</a>
 
 	
@@ -114,26 +114,26 @@ else
 {
 	?>
 	<center>
-    <form name=myform method=post action='unstucker.php'>
+    <form action='unstucker.php' method="post" name="myform" id="myform">
     <table width="200" border="1">
   <tr>
     <td>Account:</td>
-    <td><input type=text name=account value=''></td>
+    <td><input type="text" name="account" value='' /></td>
   </tr>
   <tr>
     <td>Character:</td>
-    <td><input type=text name=character value=''></td>
+    <td><input type="text" name="character" value='' /></td>
   </tr>
   <tr>
     <td>Password:</td>
-    <td><input type=password name=password value=''></td>
+    <td><input type="password" name="password" value='' /></td>
   </tr>
 </table>
-	<input type=submit name=submit value=Unstuck>
+	<input type="submit" name="submit" value="Unstuck" />
 	</form>
    	<br />
-	You <b>MUST</b> be offline for this tool to successfully work<br /><br />
-	<br /></center>
+	You <b>MUST</b> be offline for this tool to successfully work
+    </center>
 <?php } ?>
           <!-- script stop -->
           
