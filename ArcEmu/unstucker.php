@@ -25,7 +25,7 @@ require_once('./lib/config.php')
 <div class="banner"></div>
 
 
-<div class="bar"><br /><center><?php include('login-form.php') ?></center></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
+<div class="bar"><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
 include('./lib/leftnavi.php')
 ?>
@@ -48,12 +48,10 @@ if(isset($_POST['submit']))
 	$password = $_POST['password'];
 	$character = $_POST['character'];
 
-include_once "config.php";
-
 
 	//get account id from characters table where the name is character '$character'
-	$con = mysql_connect($cHost.":".$cPort, $cUsername, $cPass) or die(mysql_error());
-	mysql_select_db($cDatabase) or die(mysql_error());
+	$con = mysql_connect($config['mysql_host'].":".$config['mysql_port'], $config['mysql_user'], $config['mysql_pass']) or die(mysql_error());
+	mysql_select_db($config['mysql_character']) or die(mysql_error());
 
 	$character = mysql_real_escape_string(htmlentities($character));
 
@@ -61,8 +59,6 @@ include_once "config.php";
 
 	$result = mysql_query($query) or die(mysql_error());
 	$numrows = mysql_num_rows($result);
-
-	echo "<tr><td align=center>";
 
 	//if no rows exist, the character does not exist
 	if($numrows == 0)
@@ -76,8 +72,8 @@ include_once "config.php";
 	mysql_close();
 
 	//get make sure the character exists on the correct account and password is the same
-	$con = mysql_connect($aHost.":".$aPort, $aUsername, $aPass) or die(mysql_error());
-	mysql_select_db($aDatabase) or die(mysql_error());
+	$con = mysql_connect($config['mysql_host'].":".$config['mysql_port'], $config['mysql_user'], $config['mysql_pass']) or die(mysql_error());
+	mysql_select_db($config['mysql_account']) or die(mysql_error());
 
 	$account = mysql_real_escape_string($account);
 	$password = mysql_real_escape_string($password);
@@ -94,52 +90,51 @@ include_once "config.php";
 		die("Account name or password is incorrect!");
 	}
 	mysql_close();
-	$con = mysql_connect($cHost.":".$cPort, $cUsername, $cPass) or die(mysql_error());
-	mysql_select_db($cDatabase) or die(mysql_error());
+	$con = mysql_connect($config['mysql_host'].":".$config['mysql_port'], $config['mysql_user'], $config['mysql_pass']) or die(mysql_error());
+	mysql_select_db($config['mysql_character']) or die(mysql_error());
 
 	//update the character table to set the character to hearth location
 	$query = "update characters SET positionX = bindpositionX, positionY = bindpositionY, positionZ = bindpositionZ, mapId = bindmapId, zoneId = bindzoneId, deathstate = 0 WHERE name = '".$character."'";
 
 	mysql_query($query) or die(mysql_error());
+	?>
+	<center>
+	<br />
+	<br />
+	The Character with the name '<b>".$character."</b>' under Account '<b>".$account."</b>' has been unstuck!<br>
+	<a href='javascript:history.go(-1)'>Back</a>
 
-	echo "<center>";
-	echo "<br />";
-	echo "<br />";
-	echo "The Character with the name '<b>".$character."</b>' under Account '<b>".$account."</b>' has been unstuck!<br>";
-	echo "<a href='javascript:history.go(-1)'>Back</a>";
-
-	echo "</td></tr>";
-
+	
+	<?php
 	//close mysql connection
 	mysql_close();
 }
 //if page is loaded, display unstuck form
 else
 {
-	echo "<center>";
-	echo "<form name=myform method=post action='unstucker.php'>";
+	?>
+	<center>
+	<form name=myform method=post action='unstucker.php'>
 
-	echo "<br />";
-	echo "<tr><td>Account: </td><td><input type=text name=account value=''></td></tr>";
-	echo "<br />";
-	echo "<tr><td>Character: </td><td><input type=text name=character value=''></td></tr>";
-	echo "<br />";
-	echo "<tr><td>Password: </td><td><input type=password name=password value=''></td></tr>";
-	echo "<br />";
-	echo "<tr><td><br><input type=submit name=submit value=Unstuck></td></tr>";
-	echo "</form>";
-}
-
-	echo "<center>";
-	echo "</table>";
-	echo "<br />";
-	echo "<br />";
-	echo "<small>You <b>MUST</b> be offline for this tool to successfully work</small><br /><br />";
-	echo "<br />";
-	echo " ";
-	echo "<br />";
-	echo "</center>";
-?>
+	<br />
+	Account: <input type=text name=account value=''>
+	<br />
+	Character: <input type=text name=character value=''>
+	<br />
+	Password: <input type=password name=password value=''>
+	<br />
+	<br><input type=submit name=submit value=Unstuck>
+	</form>
+<?php } ?>
+	<center>
+	</table>
+	<br />
+	<br />
+	You <b>MUST</b> be offline for this tool to successfully work<br /><br />
+	<br />
+	 
+	<br />
+	</center>
           <!-- script stop -->
           
           <center><br/>
@@ -152,8 +147,6 @@ else
 <div class="story-bot" align="center"><br/>
 
 </div>
-
-<!-- End News Post -->
 
 <br /></td>
 <?php
