@@ -16,10 +16,10 @@
 <!-- Login Basic Form -->
 <form name="login" action="lib/login.php" method="post">
     <label>Username</label>
-    <input name="login" type="text" size="14" />
-    <label>Password</label>
-    <input name="psw" type="text" size="14" />
-    <input type="submit" name="button" id="button" value="Login" />
+    <input name="login" type="text" size="14" /><br /><br />
+    <label>Password </label>
+    <input name="psw" type="text" size="14" /><br /><br />
+    <input type="submit" name="button" id="button" value="Login" allign="center" />
 </form>
 
 <?php if(isset($_SESSION['userid'])){ ?>
