@@ -42,6 +42,53 @@ include('./lib/leftnavi.php')
 
 		<!-- Header Title -->
 	
+				Enhanced Template Update!
+
+
+</div></div><div class="story"><center><div style="width:300px; text-align:left"><center><br/>
+
+		<!-- Main Story -->
+This is based off FrozenBlade v2 made by Kitten from WoWps.org.<br /><br/></center>
+<center>
+What the projects goal is to integrate,<br />
+Account "gameCP" :<br />
+Create account<br />
+Login System<br />
+Change pass<br />
+Forgot pass<br />
+<br />
+Member section "workshop":<br />
+Status "server info and players online"<br />
+unstucker<br />
+teleporter<br />
+Shop "buy credits to purchase ingame gear"<br />
+Vote "vote to earn credits to purchase ingame gear"<br />
+<br />
+all this into a nice little system used with kittens template.<br />
+<br />
+If you would like to help contact me on messenger lit_69@hotmail.com<br/><br/>
+</center>
+<center>If you ever need help, please email me and I'll do my best to assist you.</center>
+
+</div></center></div><div class="story-bot" align="center"><br/>
+
+		<!-- Posted By -->
+			
+				Posted by Furt
+
+			
+
+</div>
+
+<!-- End News Post -->
+
+<!-- Start News Post -->
+
+<div class="story-top"><div align="center">
+<br/><br/><br/><br/><br/><br/>
+
+		<!-- Header Title -->
+	
 				FrozenBlade Template Update!
 
 
