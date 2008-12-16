@@ -52,8 +52,6 @@ include('./lib/leftnavi.php')
 
 </div>
 
-<!-- End News Post -->
-
 <br /></td>
 <?php
 include('./lib/rightnavi.php')

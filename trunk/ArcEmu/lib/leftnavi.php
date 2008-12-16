@@ -45,8 +45,8 @@
 			
 				<li><a href="#">Vote Page</a></li><br/><br/>
 				<li><a href="#">Vote Panel</a></li><br/><br/>
-				<li><a href="#">Unstucker</a></li><br/><br/>
-				<li><a href="#">Teleporter</a></li><br/><br/>
+				<li><a href="unstucker.php">Unstucker</a></li><br/><br/>
+				<li><a href="teleporter.php">Teleporter</a></li><br/><br/>
 				<li><a href="#">Status Page</a></li><br/><br/>
 				<li><a href="#">Honor Page</a></li><br/><br/>
 		
