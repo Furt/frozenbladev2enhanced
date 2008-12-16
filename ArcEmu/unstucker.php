@@ -101,7 +101,7 @@ if(isset($_POST['submit']))
 	<center>
 	<br />
 	<br />
-	The Character with the name '<b>".$character."</b>' under Account '<b>".$account."</b>' has been unstuck!<br>
+	The Character with the name '<b><?php echo "$character"; ?></b>' under Account '<b><?php echo "$account"; ?></b>' has been unstuck!<br>
 	<a href='javascript:history.go(-1)'>Back</a>
 
 	
@@ -114,27 +114,27 @@ else
 {
 	?>
 	<center>
-	<form name=myform method=post action='unstucker.php'>
-
-	<br />
-	Account: <input type=text name=account value=''>
-	<br />
-	Character: <input type=text name=character value=''>
-	<br />
-	Password: <input type=password name=password value=''>
-	<br />
-	<br><input type=submit name=submit value=Unstuck>
+    <form name=myform method=post action='unstucker.php'>
+    <table width="200" border="1">
+  <tr>
+    <td>Account:</td>
+    <td><input type=text name=account value=''></td>
+  </tr>
+  <tr>
+    <td>Character:</td>
+    <td><input type=text name=character value=''></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input type=password name=password value=''></td>
+  </tr>
+</table>
+	<input type=submit name=submit value=Unstuck>
 	</form>
-<?php } ?>
-	<center>
-	</table>
-	<br />
-	<br />
+   	<br />
 	You <b>MUST</b> be offline for this tool to successfully work<br /><br />
-	<br />
-	 
-	<br />
-	</center>
+	<br /></center>
+<?php } ?>
           <!-- script stop -->
           
           <center><br/>
