@@ -28,12 +28,9 @@
 		
 		<!-- Account Links-->
 			
-				<li><a href="login.php">Account Login</a></li><br/><br/>
                 <li><a href="account.php">Create Account</a></li><br/><br/>
 				<li><a href="#">Change Password</a></li><br/><br/>
 				<li><a href="#">Get Password</a></li><br/><br/>
-				<li><a href="#">Ban Checker</a></li><br/><br/>
-				<li><a href="#">IP Ban Checker</a></li><br/><br/>
 		
 		<!-- --------- -->		
 		
@@ -43,12 +40,8 @@
 		
 		<!-- Workshop Links -->
 			
-				<li><a href="#">Vote Page</a></li><br/><br/>
-				<li><a href="#">Vote Panel</a></li><br/><br/>
 				<li><a href="unstucker.php">Unstucker</a></li><br/><br/>
 				<li><a href="teleporter.php">Teleporter</a></li><br/><br/>
-				<li><a href="#">Status Page</a></li><br/><br/>
-				<li><a href="#">Honor Page</a></li><br/><br/>
 		
 		<!-- --------- -->
 			
