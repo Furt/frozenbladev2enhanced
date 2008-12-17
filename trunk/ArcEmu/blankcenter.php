@@ -39,6 +39,7 @@ include('./lib/leftnavi.php')
 </div></div><div class="story"><center><div style="width:300px; text-align:left">
 
       <div align="center">
+	  <br /><br /><br />
   <!-- script start -->
 
           <!-- script stop -->
