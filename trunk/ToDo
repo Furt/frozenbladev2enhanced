@@ -1,4 +1,5 @@
 ToDo List-
 
-Make use of include function more.
-Get account page to show right navi and footer on account create.
+Work on improving login system before adding to trunk.
+Fix allignment problems in some scripts.
+Make all scripts compatible before adding more to project.
