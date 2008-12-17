@@ -28,14 +28,14 @@ require_once('./lib/config.php')
 <div class="banner"></div>
 
 
-<div class="bar"><br /><center><?php include('login-form.php') ?></center></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
+<div class="bar"><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
 include('./lib/leftnavi.php')
 ?>
 <td width="430" valign="top">
 
 <div class="story-top"><div align="center">
-<br/><br/><br/><br/><br/><br/><img src="images/text/account.png">
+<br/><br/><br/><br/><br/><br/><img src="images/text/teleporter.png">
 
 </div></div><div class="story"><center><div style="width:300px; text-align:left">
 
@@ -43,11 +43,6 @@ include('./lib/leftnavi.php')
   <!-- script start -->
 <br><br><br>
 <?php
-//account database info
-include_once "config.php";
-
-//default = 250g per transport. ex: $TELEPORT_COST = 954, would mean 954 gold per transport
-				
 
 if(isset($_POST['submit']))
 {
@@ -59,8 +54,8 @@ if(isset($_POST['submit']))
 	$acct = "";							//acct id from db
 	$race = "";							//characters race id
 
-	$con = mysql_connect($aHost.":".$aPort, $aUsername, $aPass) or die(mysql_error());
-	mysql_select_db($aDatabase) or die(mysql_error());
+	$con = mysql_connect($config['mysql_host'].":".$config['mysql_port'], $config['mysql_user'], $config['mysql_pass']) or die(mysql_error());
+	mysql_select_db($config['mysql_account']) or die(mysql_error());
 
 	$account = mysql_real_escape_string($account);
 	$password = mysql_real_escape_string($password);
@@ -71,9 +66,10 @@ if(isset($_POST['submit']))
 
 	$result = mysql_query($query) or die(mysql_error());
 	$numrows = mysql_num_rows($result);
+	?>
 
-	echo "<tr><td align=center>";
-
+	
+	<?php
 	//if no rows exist, wrong username/password
 	if($numrows == 0)
 	{
@@ -86,8 +82,8 @@ if(isset($_POST['submit']))
 	}
 	mysql_close();	//kill connection to accounts db
 
-	$con = mysql_connect($cHost.":".$cPort, $cUsername, $cPass) or die(mysql_error());
-	mysql_select_db($cDatabase) or die(mysql_error());
+	$con = mysql_connect($config['mysql_host'].":".$config['mysql_port'], $config['mysql_user'], $config['mysql_pass']) or die(mysql_error());
+	mysql_select_db($config['mysql_character']) or die(mysql_error());
 	$query = "SELECT race, gold FROM characters WHERE acct = ".$acct." AND name = '".$character."'";
 
 	$result = mysql_query($query);
@@ -252,68 +248,68 @@ if(isset($_POST['submit']))
 
 	$query = "UPDATE characters SET positionX = ".$x.", positionY = ".$y.", positionZ = ".$z.", mapid = ".$map.", gold = ".$newGold." WHERE acct = ".$acct." AND name = '".$character."'";
 	$result = mysql_query($query) or die(mysql_error());
-
-	echo "<center";
-	echo "<br />";
-	echo "<br />";
-	echo "The Character '<b>".$character."</b>' (Account: '<b>".$account."</b>') has been teleported to '<b>".$place."</b>'<br />";
-	echo "The Character '<b>".$character."</b>' now has '<b>".($newGold / 10000)."</b>' Gold left<br />";
-	echo "<a href='javascript:history.go(-1)'>Back</a>";
-	echo "</center>";
-
+	?>
+	<center
+	<br />
+	<br />
+	The Character <b><?php echo $character ?></b> (Account: <b><?php echo $account ?></b>) has been teleported to <b><?php echo $place ?></b>.<br />
+	The Character <b><?php echo $character ?></b> now has <b><?php echo ($newGold / 10000) ?></b> Gold left.<br />
+	<a href='javascript:history.go(-1)'><br /><center><b>BACK</b></center></a>
+	</center>
+	<?php
 	mysql_close();	//kill connection to characters db
 }
 else
 {
-	echo "<center>";
-	echo "<form name=myform method=post action'/tele.php'>";
+	?>
+    <center>
+    <form name=myform method=post action=teleporter.php>
+    (<b>Note</b>: Cost is <b><?php echo $TELEPORT_COST ?>g</b> for 1 teleport)
+	<br /><br />
+    <table width="125" border="0">
+  <tr>
+    <td>Account:</td>
+    <td><input type=text name=account value=''></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input type=password name=password value=''></td>
+  </tr>
+  <tr>
+    <td>Character:</td>
+    <td><input type=text name=character value=''></td>
+  </tr>
+  <tr>
+    <td>Location:</td>
+    <td><select name=location>
+	<option value='--------'>---Alliance---</option>
+	<option value='1'>Stormwind City</option>
+	<option value='2'>Ironforge</option>
+	<option value='3'>Darnassus</option>
+	<option value='4'>The Exodar</option>
+	<option value='21'>Valiance Keep</option>
+	<option value='--------'>---Horde---</option>
+	<option value='5'>Orgrimmar</option>
+	<option value='6'>Thunder Bluff</option>
+	<option value='7'>The Undercity</option>
+	<option value='8'>Silvermoon City</option>
+	<option value='22'>Warsong Hold</option>
+	<option value='--------'>---Neutral---</option>
+	<option value='9'>Shattrath City</option>
+	<option value='20'>Dalaran</option>
+	</select></td>
+  </tr>
+</table>
+	<input type="submit" name="submit" value="Teleport" />
+	</form>
+	<br /><br />
+	You <b>MUST</b> be offline for this tool to successfully work</small><br />
+</center>
 
-	echo "<br />";
-	echo "<h1><u><b>Character Teleporter</b></u></h1>";
-	echo "<tr><td colspan=2 align=center><font size=1>(<b>Note</b>: Cost is <b>".$TELEPORT_COST."g</b> for 1 teleport)</font></td></tr>";
-	echo "<br />";
-	echo "<br />";
-	echo "<tr><td width=125>Account: </td><td><input type=text name=account value=''></td></tr>";
-	echo "<br />";
-	echo "<tr><td width=125>Password: </td><td><input type=password name=password value=''></td></tr>";
-	echo "<br />";
-	echo "<tr><td width=125>Character: </td><Td><input type=text name=character value=''></td></tr>";
-	echo "<br />";
-	echo "<tr><td width=125>Location: </td><td>";
-
-	echo "<select name=location>";
-	echo "<option value='--------'>---Alliance---</option>";
-	echo "<option value='1'>Stormwind City</option>";
-	echo "<option value='2'>Ironforge</option>";
-	echo "<option value='3'>Darnassus</option>";
-	echo "<option value='4'>The Exodar</option>";
-	echo "<option value='21'>Valiance Keep</option>";
-	echo "<option value='--------'>---Horde---</option>";
-	echo "<option value='5'>Orgrimmar</option>";
-	echo "<option value='6'>Thunder Bluff</option>";
-	echo "<option value='7'>The Undercity</option>";
-	echo "<option value='8'>Silvermoon City</option>";
-	echo "<option value='22'>Warsong Hold</option>";
-	echo "<option value='--------'>---Neutral---</option>";
-	echo "<option value='9'>Shattrath City</option>";
-	echo "<option value='20'>Dalaran</option>";
-	echo "</select>";
-	echo "<br />";
-	echo "<tr><td colspan=2 align=center><br><input type=submit name=submit value=Teleport></td></tr>";
-	echo "</form>";
+<?php
 }
-
-	echo "<center>";
-	echo "</table>";
-	echo "<br />";
-	echo "<br />";
-	echo "<small>You <b>MUST</b> be offline for this tool to successfully work</small><br /><br />";
-	echo "<br />";
-	echo " ";
-	echo "<br />";
-	echo "</center>";
-
 ?>
+
           <!-- script stop -->
           
           <center><br/>
