@@ -118,7 +118,7 @@ else
 	?>
 	<center>
     <form action='unstucker.php' method="post" name="myform" id="myform">
-    <table width="200" border="1">
+    <table width="200" border="0">
   <tr>
     <td>Account:</td>
     <td><input type="text" name="account" value='' /></td>
