@@ -121,9 +121,9 @@ function addUser(){
     }
 
     if($config['EncryptedPass'] > 0)
-        $query = "INSERT INTO `accounts` (`acct`, `login`, `encrypted_password`, `gm`, `banned`, `lastlogin`, `lastip`, `email`, `flags`, `forceLanguage`, `muted`) VALUES (NULL, '".mysql_real_escape_string($_POST['login'])."', '$encrypted_password', '0', '0', NOW(), '".$_SERVER['REMOTE_ADDR']."', '".mysql_real_escape_string($_POST['email'])."', '".mysql_real_escape_string($_POST['tbc'][0])."', 'enUS', '0')";
+        $query = "INSERT INTO `accounts` (`acct`, `login`, `encrypted_password`, `gm`, `banned`, `lastlogin`, `lastip`, `email`, `flags`, `forceLanguage`, `muted`) VALUES (NULL, '".mysql_real_escape_string($_POST['login'])."', '$encrypted_password', '0', '0', NOW(), '".$_SERVER['REMOTE_ADDR']."', '".mysql_real_escape_string($_POST['email'])."', '".mysql_real_escape_string($_POST['flag'])."', 'enUS', '0')";
     else
-        $query = "INSERT INTO `accounts` (`acct`, `login`, `password`, `gm`, `banned`, `lastlogin`, `lastip`, `email`, `flags`, `forceLanguage`, `muted`) VALUES (NULL, '".mysql_real_escape_string($_POST['login'])."', '".mysql_real_escape_string($_POST['password'][1])."', '0', '0', NOW(), '".$_SERVER['REMOTE_ADDR']."', '".mysql_real_escape_string($_POST['email'])."', '".mysql_real_escape_string($_POST['tbc'][0])."', 'enUS', '0')";
+        $query = "INSERT INTO `accounts` (`acct`, `login`, `password`, `gm`, `banned`, `lastlogin`, `lastip`, `email`, `flags`, `forceLanguage`, `muted`) VALUES (NULL, '".mysql_real_escape_string($_POST['login'])."', '".mysql_real_escape_string($_POST['password'][1])."', '0', '0', NOW(), '".$_SERVER['REMOTE_ADDR']."', '".mysql_real_escape_string($_POST['email'])."', '".mysql_real_escape_string($_POST['flag'])."', 'enUS', '0')";
 
     $res = mysql_query($query, $db);
     if (!$res) return $error[] = 'Database: '.mysql_error();
@@ -163,10 +163,10 @@ if(!empty($_POST)){
                 </tr>
               
               <th>Account Type:</th><td>
-                <select name="tbc" type="select">
+                <select name="flag" type="select">
                   <option value="0">Normal</option>
-                  <option selected value="116">Burning Crusade</option>
-                  <option value="124">WotLK</option>
+                  <option value="16">Burning Crusade</option>
+                  <option selected value="24">WotLK</option>
                   </select></td>
                 
                 <TR>
