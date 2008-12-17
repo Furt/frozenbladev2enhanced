@@ -162,8 +162,8 @@ if(!empty($_POST)){
               <th>Account Type:</th><td>
                 <select name="tbc" type="select">
                   <option value="0">Normal</option>
-                  <option selected value="8">Burning Crusade</option>
-                  <option value="44">WotLK</option>
+                  <option selected value="16">Burning Crusade</option>
+                  <option value="24">WotLK</option>
                   </select></td>
                 
                 <TR>
