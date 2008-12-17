@@ -1,0 +1,10 @@
+FrozenBlade Enhanced.
+
+To install and run this website you must have the following steps completed.
+1. Must have Mysql, Apache /w php, and be running a MaNGOS or ArcEmu server "which ever project you are using".
+2. Upload all files from either Trunk/ArcEmu-MaNGOS.
+3. Setup up lib/config.php I you do not do this the site will show errors and not work properly.
+
+If you have any problems contact me and I will do my best to try to help you.
+
+--Furt
