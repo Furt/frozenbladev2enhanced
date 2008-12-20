@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <?php
-require_once('./includes/config.php')
+require_once('./lib/config.php')
 ?>
 <title><?php  echo $config['Title']; ?></title>
 
@@ -30,7 +30,7 @@ require_once('./includes/config.php')
 
 <div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
-include('./includes/leftnavi.php')
+include('./lib/leftnavi.php')
 ?>
 <td width="574" valign="top">
 
@@ -117,6 +117,48 @@ include('./includes/leftnavi.php')
 	<!-- name and position -->
 	
 			<b>DJRavine</b><br/>			PHP Coder
+	   
+</div></div>
+
+</div></td><td height="100%" valign="top"><div class="box2"><br>
+
+	<!-- general information -->
+			
+&nbsp;			Name: 				??				<br/>
+&nbsp;			Location: 			??				<br/>
+&nbsp;			Age: 				??				<br/><br/>
+
+
+&nbsp;			Information: 		??				</div></td></tr></table></div></div><br/>
+
+
+				<!-- End Staff Member --><!-- End Staff Member -->
+				<!-- End Staff Member --><!-- End Staff Member -->
+				
+				<!-- Start Staff Member --><!-- Start Staff Member -->
+				<!-- Start Staff Member --><!-- Start Staff Member -->
+
+<div class="bg1"><div class="bg2"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="140" height="100%" valign="top"><div class="box1"><div class="charbg">
+
+
+	<!-- character details -->
+			<!-- please refer to the guide to change character details -->
+	
+			<div class="orc-male"></div>
+			<div class="shaman"></div>
+			<div class="horde"></div>
+			
+</div><div class="userpic">
+
+	<!-- user image -->
+
+				<img src="images/user/6.gif">
+
+</div><div class="user">
+
+	<!-- name and position -->
+	
+			<b>Furt</b><br/>			PHP Coder
 	   
 </div></div>
 
