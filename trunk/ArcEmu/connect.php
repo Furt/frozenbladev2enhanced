@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <?php
-require_once('./includes/config.php')
+require_once('./lib/config.php')
 ?>
 <title><?php  echo $config['Title']; ?></title>
 
@@ -30,7 +30,7 @@ require_once('./includes/config.php')
 
 <div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
-include('./includes/leftnavi.php')
+include('./lib/leftnavi.php')
 ?>
 <td width="574" valign="top">
 
@@ -82,13 +82,9 @@ To make sure your client is running the same supported version as our server you
 
 		<!-- Patch Download Links -->
 
-You can use your World of Warcraft client to download your patches automatically, or your can download them manually from these sites:<br/><br/>
+You can use your World of Warcraft client to download your patches automatically, or your can download them manually from here:<br/><br/>
 
-<center><a href="http://www.wowwiki.com/Patch_mirrors"><u>http://www.wowwiki.com/Patch_mirrors</u></a><br>
-<a hre="http://a.wirebrain.de/wow/"><u>http://a.wirebrain.de/wow/</u></a><br><br>
-
-<img src="images/temp/br.png"></center>
-
+<center><a href="http://www.wowwiki.com/Patch_mirrors" onMouseOver="image2.src='images/text/wiki.png'" onMouseOut="image2.src='images/text/wiki2.png'"><img src="images/text/wiki2.png"; name="image2" border="0"></a><br /><br /><img src="images/temp/br.png"></center>
 
 		<!-- Change Your Realmlist -->
 
@@ -109,8 +105,7 @@ Do you play more than one WoW server and want no more realmlists? then check out
 
 		<!-- Advertising Virtue: Realmlister -->
 		
-<center><a href="http://virtue.nadasoft.net/"><img src="images/temp/virtue.png" border="0"><br>
-<font color="#FFFFFF"><u>http://virtue.nadasoft.net/</u></font></a><br/><br/>
+<center><a href="http://virtue.nadasoft.net/"><img src="images/temp/virtue.png" border="0"></a><br/><br/>
 <img src="images/temp/br.png"></center>
 
 
