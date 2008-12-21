@@ -65,7 +65,7 @@ Here is the direct installer for classic and both expansions:<br><br>
 
 			<!-- Official Installers Download Links -->
 		
-<center><a href="download/InstalWoW.exe" onMouseOver="image1.src='images/text/wow-installer2.png'" onMouseOut="image1.src='images/text/wow-installer.png'"><img src="images/text/wow-installer.png"; name="image1" border="0"></a><br /><br /><img src="images/temp/br.png"></center>
+<center><a href="download/InstallWoW.exe" onMouseOver="image1.src='images/text/wow-installer2.png'" onMouseOut="image1.src='images/text/wow-installer.png'"><img src="images/text/wow-installer.png"; name="image1" border="0"></a><br /><br /><img src="images/temp/br.png"></center>
 
 		
 			<!-- Download and Install Patches -->		
