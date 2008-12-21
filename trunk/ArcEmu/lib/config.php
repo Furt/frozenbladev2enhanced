@@ -20,9 +20,13 @@
  /******* Account Creation Settings **********************************************************
  *
  *      mysql_host - MySQL Host Address
+ *      mysql_port - MySQL port
  *      mysql_user - MySQL Username
  *      mysql_pass - MySQL Password
- *      mysql_dbname - Logon Database Where The Accounts Stuff Resides
+ *      mysql_account - logon Database Where The Accounts Stuff Resides
+ *      mysql_character - character Database Where The character Stuff Resides
+ *      mysql_world - world Database Where The arcemu Stuff Resides
+ *      mysql_website - website Database Where The extra website Stuff Resides
  * 
  *********************************************************************************************/
  
@@ -33,17 +37,7 @@
     $config['mysql_account'] = 'logon';
 	$config['mysql_character'] = 'character';
 	$config['mysql_world'] = 'world';
-	
-/******* IP & Ban Checker, Tele & Unstucker Settings **************************************************
- *
- *      EnableEmail -  If you know you can send mail then enable this, default: false -- (disabled)
- *      SiteEmail - Your admin email/Support email
- * 
- *********************************************************************************************/
- 
-	// Teleporter Settings
-	//default = 50g/teleport. ex -  $TELEPORT_COST = 954, would mean 954 gold per transport
-	$TELEPORT_COST = 50;
+	$config['mysql_website'] = 'website';
     
  /******* OTHER SETTINGS **********************************************************************
  *
@@ -54,6 +48,9 @@
  *      EncryptedPass - Encrypted passwords = 1, Uncrypted = 0
  *      RealmIP - Set this to the IP address of your realm server
  *      PatchVersion - The Client patch number that the server allows to connect
+ *		PayPal - The email for your paypal donations
+ *		Teleporter Settings - default = 50g/teleport. ex -  $TELEPORT_COST = 954,
+ *		would mean 954 gold per transport
  * 
  *********************************************************************************************/
 
@@ -64,6 +61,8 @@
     $config['EncryptedPass'] = '0';
     $config['RealmIP'] = 'your.realmlist.com';
     $config['PatchVersion'] = '3.0.3 WotLK';
+	$config['PayPal'] = 'paypal@email.com';
+	$TELEPORT_COST = 50;
 	
 /******* EMAIL SETTINGS **********************************************************************
  *
@@ -74,15 +73,5 @@
 
     $config['EnableEmail'] = false;
     $config['SiteEmail'] = "noreply@your-site.com";
-	
-/******* Account Login Settings **************************************************************
- *
- *********************************************************************************************/
-
-	// DON'T CHANGE THE FOLLOWING CODE!
-	$db_con=mysql_connect($config['mysql_host'],$config['mysql_user'],$config['mysql_pass']);
-	$connection_string=mysql_select_db($config['mysql_account']);
-	mysql_connect($config['mysql_host'],$config['mysql_user'],$config['mysql_pass']);
-	mysql_select_db($config['mysql_account']);
 
 ?>
