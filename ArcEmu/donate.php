@@ -10,8 +10,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
-<title>FrozenBlade Template by Kitten @ WoWps.org</title>
+<?php
+require_once('./lib/config.php')
+?>
+<title><?php  echo $config['Title']; ?></title>
 
 <link rel="shortcut icon" href="images/favicon.ico">
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -26,65 +28,10 @@
 <div class="banner"></div>
 
 
-<div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr><td width="144" valign="top"><div id="links"><font class="style10">
-
-<div class="menu"></div>
-	
-	
-		<!-- Menu Links -->
-	
-				<li><a href="home.php">Home</a></li><br/><br/>
-				<li><a href="donate.php">Make a Donation</a></li><br/><br/>
-				<li><a href="connect.php">Connection Guide</a></li><br/><br/>
-				<li><a href="staff.php">Staff Members</a></li><br/><br/>
-	
-		<!-- --------- -->
-		
-			
-<div class="account"></div>
-	 
-		
-		<!-- Account Links-->
-			
-				<li><a href="#">Create Account</a></li><br/><br/>
-				<li><a href="#">Change Password</a></li><br/><br/>
-				<li><a href="#">Get Password</a></li><br/><br/>
-				<li><a href="#">Ban Checker</a></li><br/><br/>
-				<li><a href="#">IP Ban Checker</a></li><br/><br/>
-		
-		<!-- --------- -->		
-		
-			
-<div class="workshop"></div>
-				
-		
-		<!-- Workshop Links -->
-			
-				<li><a href="#">Vote Page</a></li><br/><br/>
-				<li><a href="#">Vote Panel</a></li><br/><br/>
-				<li><a href="#">Unstucker</a></li><br/><br/>
-				<li><a href="#">Teleporter</a></li><br/><br/>
-				<li><a href="#">Status Page</a></li><br/><br/>
-				<li><a href="#">Honor Page</a></li><br/><br/>
-		
-		<!-- --------- -->
-			
-			
-<div class="forum"></div>
-			
-
-		<!-- Forum Links -->
-			
-				<li><a href="#">Forum Home</a></li><br/><br/>
-				<li><a href="#">Bug Reporting</a></li><br/><br/>
-				<li><a href="#">Announcements</a></li><br/><br/>
-				<li><a href="#">General Chat</a></li><br/><br/>
-				<li><a href="#">General Support</a></li><br/><br/>
-				
-		<!-- --------- -->	
-	
-	
-</font></div><br><a href="http://wowps.org/forum"><div class="by"></div></a></td><td width="574" valign="top">
+<div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr><td width="574" valign="top">
+<?php
+include('./lib/leftnavi.php')
+?>
 
 <div class="story-top7">
 
@@ -103,7 +50,7 @@
 			
 <img src="images/temp/paypal.gif" border="0"><br/><br/>
 
-			Send donations to: server@host.com<br/><br/>
+			Send donations to: <?php echo $config['PayPal']; ?><br/><br/>
 			
 			
 <img src="images/temp/br.png"><br/></center>
