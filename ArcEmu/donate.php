@@ -28,11 +28,11 @@ require_once('./lib/config.php')
 <div class="banner"></div>
 
 
-<div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr><td width="574" valign="top">
+<div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
 include('./lib/leftnavi.php')
 ?>
-
+<td width="574" valign="top">
 <div class="story-top7">
 
 <div align="center" style="text-align:bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
