@@ -20,7 +20,7 @@ $databaseinfo['user'] = "root";
 
 
 //The password of your mysql user.
-$databaseinfo['password'] = "pass";
+$databaseinfo['password'] = "danielle";
 
 
 //The database name that phpns will use.
