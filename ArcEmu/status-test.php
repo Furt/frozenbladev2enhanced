@@ -32,21 +32,28 @@ require_once('./lib/config.php')
 
 <!-- script -->
 <br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
-<center>
-Just testing layout
+<br /><center>
+<?php
+include "./lib/StatsXML.class.php";
+$xml = new StatsXML("./lib/stats.xml");
+echo "Online Players: " . $xml->getOnlinePlayers();
+echo "&nbsp;&nbsp;Alliance: " . $xml->getAlliance();
+echo "<br />";
+echo "Gamemasters: " . $xml->getGMs();
+echo "&nbsp;&nbsp;&nbsp;&nbsp;Horde: " . $xml->getHorde();
+echo "<br />";
+echo "Connection Peak: " . $xml->getConPeak();
+echo "<br />";
+echo "<br />";
+echo "Players Online: ";
+echo "<br />" . $xml->getPlayersArray();
+echo "<br />";
+echo "<br />";
+echo "<br />";
+echo "<br />";
+echo "Uptime: " . $xml->getUptime();
+?>
 </center>
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
 <!-- script end -->
 
 </tr></table></div><div class="bottom"></div></div><div align="center" class="bot"><font class="style20"><br/></font><font class="style30">Copyright 2008 © <a href="http://wowps.org/forum">WoWps.org</a> and <?php  echo $config['Sitename']; ?>. All rights reserved.<br />Designed by <a href="http://wowps.org/forum/member-kitten.html">Kitten</a> and Coded by <a href="http://wowps.org/forum/member-furt.html">Furt</a> @ <a href="http://wowps.org/forum">WoWps.org</a></font></div></body></html>

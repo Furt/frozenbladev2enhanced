@@ -2,22 +2,22 @@
 <?xml-stylesheet type="text/xsl" href="server_stats.xsl"?>
 <serverpage>
   <status>
-    <platform>ArcEmu TRUNK r1798/Release-Win-X86 (www.ArcEmu.org)</platform>
-    <uptime>0 days, 19 hours, 14 minutes, 40 seconds</uptime>
-    <oplayers>0</oplayers>
-    <cpu>0.01</cpu>
+    <platform>ArcEmu TRUNK r1943/Release-Win-X86 (www.ArcEmu.org)</platform>
+    <uptime>0 days, 2 hours, 56 minutes, 25 seconds</uptime>
+    <oplayers>2</oplayers>
+    <cpu>0.04</cpu>
     <qplayers>0</qplayers>
-    <ram>582.496</ram>
-    <avglat>0.000</avglat>
+    <ram>588.117</ram>
+    <avglat>33.500</avglat>
     <threads>52</threads>
     <fthreads>11</fthreads>
-    <gmcount>0</gmcount>
-    <lastupdate>Mon Dec 15 01:48:52 2008
+    <gmcount>1</gmcount>
+    <lastupdate>Sat Dec 27 21:00:41 2008
 </lastupdate>
-    <alliance>0</alliance>
-    <horde>0</horde>
-    <acceptedconns>0</acceptedconns>
-    <peakcount>0</peakcount>
+    <alliance>1</alliance>
+    <horde>1</horde>
+    <acceptedconns>13</acceptedconns>
+    <peakcount>3</peakcount>
     <wdbquerysize>0</wdbquerysize>
     <cdbquerysize>0</cdbquerysize>
   </status>
@@ -26,9 +26,9 @@
     <orc>0</orc>
     <dwarf>0</dwarf>
     <nightelf>0</nightelf>
-    <undead>0</undead>
+    <undead>1</undead>
     <tauren>0</tauren>
-    <gnome>0</gnome>
+    <gnome>1</gnome>
     <troll>0</troll>
     <bloodelf>0</bloodelf>
     <draenei>0</draenei>
@@ -37,7 +37,7 @@
     <hunter>0</hunter>
     <rogue>0</rogue>
     <priest>0</priest>
-    <deathknight>0</deathknight>
+    <deathknight>2</deathknight>
     <shaman>0</shaman>
     <mage>0</mage>
     <warlock>0</warlock>
@@ -56,7 +56,7 @@
 	<instance>
 		<map>1</map>
 		<maptype>0</maptype>
-		<players>0</players>
+		<players>1</players>
 		<maxplayers>0</maxplayers>
 		<creationtime>N/A</creationtime>
 		<expirytime>N/A</expirytime>
@@ -308,7 +308,7 @@
 	<instance>
 		<map>609</map>
 		<maptype>0</maptype>
-		<players>0</players>
+		<players>1</players>
 		<maxplayers>0</maxplayers>
 		<creationtime>N/A</creationtime>
 		<expirytime>N/A</expirytime>
@@ -390,5 +390,33 @@
   <gms>
   </gms>
   <sessions>
+    <plr>
+      <name>Grandma</name>
+      <race>7</race>
+      <class>6</class>
+      <gender>1</gender>
+      <pvprank>0</pvprank>
+      <level>80</level>
+      <map>1</map>
+      <areaid>876</areaid>
+      <xpos>16264.170898</xpos>
+      <ypos>16255.843750</ypos>
+      <ontime>0 hours, 14 minutes, 35 seconds</ontime>
+      <latency>64</latency>
+    </plr>
+    <plr>
+      <name>Caina</name>
+      <race>5</race>
+      <class>6</class>
+      <gender>0</gender>
+      <pvprank>0</pvprank>
+      <level>55</level>
+      <map>609</map>
+      <areaid>4298</areaid>
+      <xpos>2457.837646</xpos>
+      <ypos>-5599.054688</ypos>
+      <ontime>1 hours, 40 minutes, 40 seconds</ontime>
+      <latency>3</latency>
+    </plr>
   </sessions>
 </serverpage>
