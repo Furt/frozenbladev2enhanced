@@ -3,9 +3,9 @@
 <serverpage>
   <status>
     <platform>ArcEmu TRUNK r1943/Release-Win-X86 (www.ArcEmu.org)</platform>
-    <uptime>0 days, 2 hours, 56 minutes, 25 seconds</uptime>
-    <oplayers>2</oplayers>
-    <cpu>0.04</cpu>
+    <uptime>1 days, 9 hours, 52 minutes, 25 seconds</uptime>
+    <oplayers>3</oplayers>
+    <cpu>0.03</cpu>
     <qplayers>0</qplayers>
     <ram>588.117</ram>
     <avglat>33.500</avglat>
@@ -15,15 +15,15 @@
     <lastupdate>Sat Dec 27 21:00:41 2008
 </lastupdate>
     <alliance>1</alliance>
-    <horde>1</horde>
-    <acceptedconns>13</acceptedconns>
+    <horde>2</horde>
+    <acceptedconns>20</acceptedconns>
     <peakcount>3</peakcount>
     <wdbquerysize>0</wdbquerysize>
     <cdbquerysize>0</cdbquerysize>
   </status>
   <statsummary>
     <human>0</human>
-    <orc>0</orc>
+    <orc>1</orc>
     <dwarf>0</dwarf>
     <nightelf>0</nightelf>
     <undead>1</undead>
@@ -38,7 +38,7 @@
     <rogue>0</rogue>
     <priest>0</priest>
     <deathknight>2</deathknight>
-    <shaman>0</shaman>
+    <shaman>1</shaman>
     <mage>0</mage>
     <warlock>0</warlock>
     <druid>0</druid>
@@ -388,8 +388,35 @@
 	</instance>
   </instances>
   <gms>
+    <gmplr>
+      <name>Furt</name>
+      <race>2</race>
+      <class>7</class>
+      <gender>0</gender>
+      <pvprank>0</pvprank>
+      <level>80</level>
+      <map>1</map>
+      <areaid>363</areaid>
+      <ontime>0 hours, 9 minutes, 25 seconds</ontime>
+      <latency>5</latency>
+      <permissions>az</permissions>
+    </gmplr>
   </gms>
   <sessions>
+    <plr>
+      <name>Furt</name>
+      <race>2</race>
+      <class>7</class>
+      <gender>0</gender>
+      <pvprank>0</pvprank>
+      <level>80</level>
+      <map>1</map>
+      <areaid>363</areaid>
+      <xpos>-618.518005</xpos>
+      <ypos>-4251.669922</ypos>
+      <ontime>0 hours, 9 minutes, 25 seconds</ontime>
+      <latency>5</latency>
+    </plr>
     <plr>
       <name>Grandma</name>
       <race>7</race>
