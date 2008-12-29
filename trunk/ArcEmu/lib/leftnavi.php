@@ -42,7 +42,7 @@
 			
 				<li><a href="unstucker.php">Unstucker</a></li><br/><br/>
 				<li><a href="teleporter.php">Teleporter</a></li><br/><br/>
-				<li><a href="status-test.php">Status</a></li><br/><br/>
+				<li><a href="status.php">Status</a></li><br/><br/>
 		
 		<!-- --------- -->
 			
