@@ -48,25 +48,28 @@ echo '<td>Connection Peak: ' . $xml->getConPeak() . '</td>';
 echo '</tr></table>';
 echo '<br /><br />';
 echo "<center><u>GM's Online</u></center>";
-echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Permissions</u></td></thead>';
+echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Map</u></td><TD ALIGN="center"><u>Zone</u></td></thead>';
 foreach ($xml->getGMsArray() as $player) {
 echo '<tr><TD ALIGN="center">' . $player['name'] . '</td>';
 echo '<TD ALIGN="center">' . convertFaction($player['race']) . '</td>';
 echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . $player['gender'] . '.gif" alt=""></td>';
 echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
 echo '<TD ALIGN="center">' . $player['level'] . '</td>';
-echo '<TD ALIGN="center">' . $player['permissions'] . '</td></tr>';
+echo '<TD ALIGN="center">' . convertMap($player['map']) . '</td>';
+echo '<TD ALIGN="center">' . $player['areaid'] . '</td></tr>';
 }
 echo '</table>';
 echo '<br />';
 echo '<center><u>Players Online</u></center>';
-echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td></thead>';
+echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Map</u></td><TD ALIGN="center"><u>Zone</u></td></thead>';
 foreach ($xml->getPlayersArray() as $player) {
 echo '<tr><TD ALIGN="center">' . $player['name'] . '</td>';
 echo '<TD ALIGN="center">' . convertFaction($player['race']) . '</td>';
 echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . $player['gender'] . '.gif" alt=""></td>';
 echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
-echo '<TD ALIGN="center">' . $player['level'] . '</td></tr>';
+echo '<TD ALIGN="center">' . $player['level'] . '</td>';
+echo '<TD ALIGN="center">' . convertMap($player['map']) . '</td>';
+echo '<TD ALIGN="center">' . $player['areaid'] . '</td></tr>';
 }
 echo '</table>';
 echo '<br />';
