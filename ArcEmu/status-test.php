@@ -28,32 +28,53 @@ require_once('./lib/config.php')
 
 
 <div class="bar"><?php include('./lib/topnavi.php') ?><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
-<br/><br/><br/><center><img src="images/text/status.png"></center>
-
+<br /><center><img src="images/text/status.png"></center>
+<br />
 <!-- script -->
-<br /><br />
-<br /><center>
 <?php
 include "./lib/StatsXML.class.php";
 $xml = new StatsXML("./lib/stats.xml");
-echo "Online Players: " . $xml->getOnlinePlayers();
-echo "&nbsp;&nbsp;Alliance: " . $xml->getAlliance();
-echo "<br />";
-echo "Gamemasters: " . $xml->getGMs();
-echo "&nbsp;&nbsp;&nbsp;&nbsp;Horde: " . $xml->getHorde();
-echo "<br />";
-echo "Connection Peak: " . $xml->getConPeak();
-echo "<br />";
-echo "<br />";
-echo "Players Online: ";
-echo "<br />" . $xml->getPlayersArray();
-echo "<br />";
-echo "<br />";
-echo "<br />";
-echo "<br />";
-echo "Uptime: " . $xml->getUptime();
+echo '<br />';
+echo '<table align="center" border="1" width="300"><tr>';
+echo '<td>Average Latency: ' . $xml->getLatency() . ' ms</td></tr><tr>';
+echo '<td>Online Players: ' . $xml->getOnlinePlayers() . '</td>';
+echo '<td>Alliance: ' . $xml->getAlliance() . '</td>';
+echo '</tr><tr>';
+echo '<td>Gamemasters: ' . $xml->getGMs() . '</td>';
+echo '<td>Horde: ' . $xml->getHorde() . '</td';
+echo '</tr><tr>';
+echo '<td>Connection Peak: ' . $xml->getConPeak() . '</td>';
+echo '</tr></table>';
+echo '<br /><br />';
+echo "<center><u>GM's Online</u></center>";
+echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Gender</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Permissions</u></td></thead>';
+foreach ($xml->getGMsArray() as $gmplayer) {
+echo '<tr><TD ALIGN="center">' . $gmplayer['name'] . '</td>';
+echo '<TD ALIGN="center">' . $gmplayer['race'] . '</td>';
+echo '<TD ALIGN="center">' . $gmplayer['class'] . '</td>';
+echo '<TD ALIGN="center">' . $gmplayer['gender'] . '</td>';
+echo '<TD ALIGN="center">' . $gmplayer['level'] . '</td>';
+echo '<TD ALIGN="center">' . $gmplayer['permissions'] . '</td></tr>';
+}
+echo '</table>';
+echo '<br />';
+echo '<center><u>Players Online</u></center>';
+echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Gender</u></td><TD ALIGN="center"><u>Level</u></td></thead>';
+foreach ($xml->getPlayersArray() as $player) {
+echo '<tr><TD ALIGN="center">' . $player['name'] . '</td>';
+echo '<TD ALIGN="center">' . $player['race'] . '</td>';
+echo '<TD ALIGN="center">' . $player['class'] . '</td>';
+echo '<TD ALIGN="center">' . $player['gender'] . '</td>';
+echo '<TD ALIGN="center">' . $player['level'] . '</td></tr>';
+}
+echo '</table>';
+echo '<br />';
+echo '<br /><center>';
+echo 'Uptime: ' . $xml->getUptime();
+echo '</center><br />';
 ?>
-</center>
+<!-- replace x with what u have your stats.xml set to update to -->
+<center><b><u>Note:</u> This page only updates every x minutes via stats.xml</b></center>
 <!-- script end -->
 
 </tr></table></div><div class="bottom"></div></div><div align="center" class="bot"><font class="style20"><br/></font><font class="style30">Copyright 2008 © <a href="http://wowps.org/forum">WoWps.org</a> and <?php  echo $config['Sitename']; ?>. All rights reserved.<br />Designed by <a href="http://wowps.org/forum/member-kitten.html">Kitten</a> and Coded by <a href="http://wowps.org/forum/member-furt.html">Furt</a> @ <a href="http://wowps.org/forum">WoWps.org</a></font></div></body></html>

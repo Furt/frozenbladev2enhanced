@@ -27,11 +27,16 @@ class StatsXML {
 		$this->info = xml2array($xml);
 	}
 	//  ///// Functions /////
-	
 	function getAll() {
 		return $this->info;
 	}
 	
+	function getLatency() {
+		return $this->info['serverpage'][0]['status'][0]['avglat'];
+	}
+	function getGMcount() {
+		return $this->info['serverpage'][0]['status'][0]['gmcount'];
+	}
 	function getOnlinePlayers() {
 		return $this->info['serverpage'][0]['status'][0]['oplayers'];
 	}
@@ -62,6 +67,9 @@ class StatsXML {
 	
 	function getPlayersArray() {
 		return $this->info['serverpage'][0]['sessions'][0]['plr'];
+	}
+	function getGMsArray() {
+		return $this->info['serverpage'][0]['gms'][0]['gmplr'];
 	}
 }
 ?>
