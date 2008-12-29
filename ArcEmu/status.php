@@ -32,6 +32,7 @@ require_once('./lib/config.php')
 <br />
 <!-- script -->
 <?php
+include "./lib/arrayXML.class.php";
 include "./lib/StatsXML.class.php";
 $xml = new StatsXML("./lib/stats.xml");
 echo '<br />';
@@ -47,24 +48,24 @@ echo '<td>Connection Peak: ' . $xml->getConPeak() . '</td>';
 echo '</tr></table>';
 echo '<br /><br />';
 echo "<center><u>GM's Online</u></center>";
-echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Gender</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Permissions</u></td></thead>';
-foreach ($xml->getGMsArray() as $gmplayer) {
-echo '<tr><TD ALIGN="center">' . $gmplayer['name'] . '</td>';
-echo '<TD ALIGN="center">' . $gmplayer['race'] . '</td>';
-echo '<TD ALIGN="center">' . $gmplayer['class'] . '</td>';
-echo '<TD ALIGN="center">' . $gmplayer['gender'] . '</td>';
-echo '<TD ALIGN="center">' . $gmplayer['level'] . '</td>';
-echo '<TD ALIGN="center">' . $gmplayer['permissions'] . '</td></tr>';
+echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Permissions</u></td></thead>';
+foreach ($xml->getGMsArray() as $player) {
+echo '<tr><TD ALIGN="center">' . $player['name'] . '</td>';
+echo '<TD ALIGN="center">' . convertFaction($player['race']) . '</td>';
+echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . $player['gender'] . '.gif" alt=""></td>';
+echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
+echo '<TD ALIGN="center">' . $player['level'] . '</td>';
+echo '<TD ALIGN="center">' . $player['permissions'] . '</td></tr>';
 }
 echo '</table>';
 echo '<br />';
 echo '<center><u>Players Online</u></center>';
-echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Gender</u></td><TD ALIGN="center"><u>Level</u></td></thead>';
+echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td></thead>';
 foreach ($xml->getPlayersArray() as $player) {
 echo '<tr><TD ALIGN="center">' . $player['name'] . '</td>';
-echo '<TD ALIGN="center">' . $player['race'] . '</td>';
-echo '<TD ALIGN="center">' . $player['class'] . '</td>';
-echo '<TD ALIGN="center">' . $player['gender'] . '</td>';
+echo '<TD ALIGN="center">' . convertFaction($player['race']) . '</td>';
+echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . $player['gender'] . '.gif" alt=""></td>';
+echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
 echo '<TD ALIGN="center">' . $player['level'] . '</td></tr>';
 }
 echo '</table>';
