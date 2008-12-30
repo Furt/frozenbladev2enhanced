@@ -148,7 +148,7 @@ if(!empty($_POST)){
                 <td><input type="button" OnClick="window.location='./pcs.php'" value="Password Changer" class="button"/></td><td><input type="button" OnClick="window.location='./fps.php'" value="Forgotten Password" class="button"/></td>
                 </tr>
               <tr class="head">
-                <th colspan="2"><?=$config['PageTitleACS'];?></th></tr>
+                <th colspan="2"></th></tr>
               <tr>
                 <th>Username: </th><td><input class="button" type="text" name="login" size="20" maxlength="16"/></td>
                 </tr>
@@ -182,8 +182,7 @@ if(!empty($_POST)){
             </table>
             <input type="button" class="button" value="Back" onClick="history.go(-1)" />
             <input type="submit" value="Submit" class="button"/>
-          </div>
-          </form>
+          </div></form>
         
         <div align="center">
           <?php
@@ -197,7 +196,8 @@ if(!empty($_POST)){
             exit();
         };
         ?>
-          
+        </div>
+		<center>
           <!-- account reg stop -->
           
           <center><br/>
