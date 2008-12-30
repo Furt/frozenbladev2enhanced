@@ -33,7 +33,7 @@
     $config['mysql_host'] = 'localhost';
 	$config['mysql_port'] = '3306';
     $config['mysql_user'] = 'root';
-    $config['mysql_pass'] = 'danielle';
+    $config['mysql_pass'] = 'password';
     $config['mysql_account'] = 'logon';
 	$config['mysql_character'] = 'character';
 	$config['mysql_world'] = 'world';
