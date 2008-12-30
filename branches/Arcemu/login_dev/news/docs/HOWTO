@@ -1,0 +1,96 @@
+phpns beginners guide
+	written by Joe Lombardo - jtlombardo@gmail.com
+	version 1 - written for phpns 2.1.1 (although applied to future versions)
+	
+Note: In order to view this guide correctly, you may need to enable word-wrap and UTF-8 encoding.
+
+0. Contents
+=============================
+1. Introduction
+2. Installation
+3. Your First Newspost
+4. Integration into your Site
+5. Conclusion
+6. Contact Information
+
+=============================
+
+1. Introduction
+
+	If you are reading this guide, then you have either downloaded 	phpns or take an interest in the software. Great! This guide will teach you the basics of installing phpns and get the system up and running in minutes! Now... the installation is easy, but you do need to know some information about your database setup. We also assume you have some knowledge of FTP clients and some Windows/Linux utilities such as WinRAR. We'll guide you though the process as best as we can in this guide, but if you get stuck, the friendly phpns staff is glad to help you resolve any issues. Our contact information is listed at the very end of this guide.
+	
+2. Installation
+
+	First, you're going to want the latest stable version of phpns. The current version at the time of this guide is 2.1.1. This is the most current and stable release yet. Any other higher versions might have more features, but they may not as stable or secure as 2.1.1. Here are the links to phpns 2.1.1 (EDIT BY ALECWH: I've changed the links to the latest release!):
+
+	===[download]===================================================================
+	
+	.ZIP: 		http://phpns.alecwh.com/downloads/releases/2.2.3_b1.zip
+	.TAR.GZ: 	http://download.phpns.com/downloads/releases/2.2.3_b1.tar.gz
+
+	There is also the phpns Bazaar repository (provided by launchpad)
+        to download from. This will offer the most recent versions of 
+        phpns and is often updated daily. However, these
+	versions may not be stable and should be used for testing purposes only.
+	You must have a bazaar client installed to access the repository.
+	
+	repository command: bzr branch http://code.launchpad.net/phpns/head
+	
+	====================================================================================
+		
+	Once downloaded, open the file with your favorite archive extractor (WinRAR, WinZip, ect...), and extract the folder your desktop (or somewhere else, it doesn't matter). Go ahead and rename it to something easier. You want something short so you arn't using a really long url. For this guide, I'm going to name it "phpns", but you can use whatever you like. Now, open up your favorite FTP client (SmartFTP, CuteFTP) drag your newly renamed folder into the root directory in your FTP client. Now open up your favorite web browser and go to the directory where you placed phpns (http://www.yourdomain.com/ns). Make sure to leave your FTP client open, as we'll need it again in just a few minutes. Since this is your first time using the software, it will automatically navigate to the installation page.
+	
+	Screen one will cover all licensing information and ask you if you are upgrading to a previous version. Since we're not, don't click the checkbox and press continue.
+	
+	Screen two looks a little complicated, but don't worry, it's not. First you'll have to select the database type. Just leave it on "mySQL database". Next, you'll need to insert your database location, username and password, and the database name. All this is taken care of through your panel provided by your hosting provider. Since there are so many panels out there, we cannot provide specific information on how to create a database for you. You will have to read a guide from your host on how to create one. Again, if you are truly stuck, contact us with the information provided at the very end of this guide. However, if you do know how to create a database, make one for phpns, and again for the sake of this guide, I would call it "phpns". Once you have the database created, return to the installation page. The next piece of information phpns needs from you is your database host. With most hosts, all you have to put here is "localhost". However, some providers such as DreamHost require you to use an actuall url (http://www.mysql.yourdomain.com). Your provider will tell you when you create the database. Now it's time to insert your database username and password. This may be the same as your FTP login information, but sometimes you can choose your own mysql username/password (such as cPanel). Next up is the database name. This is just the name you gave the database (In this guide, we called it "phpns"). The table prefix can stay the same ("phpns_"). Finally for admin information, just insert your desired login username and password for phpns. Use these when you login to the system. Click continue and if everything checks out, you will be brought to screen three of the installation process. Congratulations! This was the hardest part of installation. If for some reason you got an error and don't know why, again, feel free to contact us.
+
+	Screen three is pretty much to activate phpns. Now, instalation will prompt you to manually change the file permissions to "777" or "0777", although sometimes php has these permissions already. If not, open up your FTP client, navigate to /inc/config.php, right click the file, click properties (or CHMOD, File permissions... ect), and change permissions to Read/Write for all options (or the numbers stated above (0777, 777)).  Press continue and it will fill all your information into a configuration file. Now, switch to your FTP client (you left it open, right?) and delete the installation folder from your "phpns" folder. This will prevent anyone from going back and changing/stealing information from you. Close out and you are done with installation.
+
+	That's it! Easy, right? Now point yourself to http://www.yourdomain.com/phpns (or wherever it is on your server) and the login screen should be shown. Just login with your chosen admin username and password and you're good to go!
+
+3. Your First Newspost!
+
+	The first thing you want to do when you reach the administration page is set up your "categories". Categories are like a filing cabinet for your news posts. For example, you can have some news go to your home page using one category and have other news going to a seperate page using a different category. Click on preferences link on the top of the admin page then look under the "News Display Options" heading. Click on "category management". Here you name your category and give it a description. Lets call it "News and Updates" and give it the description "Any recent news and updates to the site". The parent listbox is unimportant here. You would use it, however, when you want to have a sub-category. If we really wanted to, we could have category "News" be a parent to category "Updates". Press continue and your category will be created.
+
+	All we have to do now is click New Article on the top menu. This will take us to the, you guessed it, the New Article page! Give the article a title. I'm calling mine "phpns Test".  The sub-title is kind of like a description. It's just an extension of your title. I'm going to use "My first newspost". The next option is your category. Select your category you just created (News and Updates) from the drop-down box. Now in the WYSIWYG (what you see is what you get) editor, or textarea, type up your newspost. When you're done, you can either preview the article, or just save it to your database. There you go! You will make this newspost actually show up on your site in the next chapter.
+
+4. Integration into your Site
+
+	Integration requires you to navigate to your /phpns (or whatever you named your phpns folder on your server) folder with your FTP client and download your .php files you want to add phpns to.
+
+	Note: any .html files will need to be converted to .php format. You can to this in Notepad or
+	any other small editing application and save it as index.php with no set extention.
+
+	Once you have it opened up in your favorite editing program, go back to your administration panel on phpns, go to preferences, and then click on the "Intregation Wizard" link (or in the default template, "generate code!" at the top navigation). For now, we're just going to select the category you want to display on your page. The rest is up to you to play around with. They pretty much just change the display order and how many articles show up on a page. Once the desired category is selected, press the Generate code button. It should spit out something like this for you:
+
+	<?php
+	/*
+		This file is used to generate articles managed by the phpns system. 
+		Place this code wherever you want your articles displayed on your 
+		website. The page that this code is placed in should have a .php
+		extension.
+	*/
+
+		$phpns['category'] = '2';
+	
+		//after variable declaration(s), include shownews.php
+		include("/home/user/domain/phpns/shownews.php");
+	?>
+
+	Paste this into your .php file where you want it to appear, upload it to your server, and refresh your page. Then navigate to that page and you should see the article you just created! You're all set! Your website is now integrated with phpns. Easy, huh?
+
+5. Conclusion
+
+	phpns has many more features, which documentation will be added in further guides. I suggest playing around with the system and checking out the random features it provides. Again, if you have any questions, all contact information is listed right blow this chapter. Hopefully this guide was very understandable and helped you get phpns up and running smoothly. You are now completely set for basic opperation! Thank you for using phpns!
+
+6. Contact Information
+
+Alec Henrikson (lead developer) - alecwh@gmail.com
+Kyle Osborn (misc. scripting) - k.p.osborn@gmail.com
+Joe Lombardo (HOWTO writing and misc. documentation) - jtlombardo@gmail.com
+
+	IRC Channel: (The best way to contact the developers)
+	Server: irc.freenode.net
+	Channel: #phpns
+
+END GUIDE
