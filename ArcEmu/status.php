@@ -36,15 +36,18 @@ include "./lib/arrayXML.class.php";
 include "./lib/StatsXML.class.php";
 $xml = new StatsXML("./lib/stats.xml");
 echo '<br />';
-echo '<table align="center" border="1" width="300"><tr>';
-echo '<td>Average Latency: ' . $xml->getLatency() . ' ms</td></tr><tr>';
+echo '<table align="center" border="1" width="340"><tr>';
+echo '<td>Average Latency: ' . $xml->getLatency() . ' ms</td>';
+echo '<td>Accepted Connections: ' . $xml->getAccCon () . '</td>';
+echo '</tr><tr>';
 echo '<td>Online Players: ' . $xml->getOnlinePlayers() . '</td>';
-echo '<td>Alliance: ' . $xml->getAlliance() . '</td>';
+echo '<td>Connection Peak: ' . $xml->getConPeak() . '</td>';
 echo '</tr><tr>';
 echo '<td>Gamemasters: ' . $xml->getGMs() . '</td>';
-echo '<td>Horde: ' . $xml->getHorde() . '</td';
+echo '<td>Alliance: ' . $xml->getAlliance() . '</td>';
 echo '</tr><tr>';
-echo '<td>Connection Peak: ' . $xml->getConPeak() . '</td>';
+echo '<td>Queued Players: ' . $xml->getQplayers () . '</td>';
+echo '<td>Horde: ' . $xml->getHorde() . '</td';
 echo '</tr></table>';
 echo '<br /><br />';
 echo "<center><u>GM's Online</u></center>";
@@ -56,7 +59,7 @@ echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . 
 echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
 echo '<TD ALIGN="center">' . $player['level'] . '</td>';
 echo '<TD ALIGN="center">' . convertMap($player['map']) . '</td>';
-echo '<TD ALIGN="center">' . $player['areaid'] . '</td></tr>';
+echo '<TD ALIGN="center">' . convertZone($player['areaid']) . '</td></tr>';
 }
 echo '</table>';
 echo '<br />';
@@ -69,7 +72,7 @@ echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . 
 echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
 echo '<TD ALIGN="center">' . $player['level'] . '</td>';
 echo '<TD ALIGN="center">' . convertMap($player['map']) . '</td>';
-echo '<TD ALIGN="center">' . $player['areaid'] . '</td></tr>';
+echo '<TD ALIGN="center">' . convertZone($player['areaid']) . '</td></tr>';
 }
 echo '</table>';
 echo '<br />';

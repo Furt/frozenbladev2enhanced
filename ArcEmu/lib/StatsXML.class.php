@@ -40,7 +40,9 @@ class StatsXML {
 	function getOnlinePlayers() {
 		return $this->info['serverpage'][0]['status'][0]['oplayers'];
 	}
-	
+		function getQplayers() {
+		return $this->info['serverpage'][0]['status'][0]['qplayers'];
+	}
 	function getUptime() {
 		return $this->info['serverpage'][0]['status'][0]['uptime'];
 	}
@@ -60,7 +62,9 @@ class StatsXML {
 	function getConPeak() {
 		return $this->info['serverpage'][0]['status'][0]['peakcount'];
 	}
-	
+		function getAccCon() {
+		return $this->info['serverpage'][0]['status'][0]['acceptedconns'];
+	}
 	function getServerVersion() {
 		return $this->info['serverpage'][0]['status'][0]['platform'];
 	}
