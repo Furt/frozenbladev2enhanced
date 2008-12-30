@@ -32,7 +32,7 @@ include('./lib/leftnavi.php')
       <div align="center">
 	  <br /><br /><br />
   <!-- script start -->
-<center>Welcome Visitor, only Member who have registered and logged in can view this page.<br />Not registered? <a href="account.php" target="main">Click Here</a>
+<center>Welcome Visitor, only Members who have registered and logged in can view this page.<br />Not registered? <a href="account.php" target="main">Click Here</a>
 </center>
           <!-- script stop -->
           

@@ -1,7 +1,15 @@
+<!-- /**
+* Project Name: FrozenBlade V2 Enhanced"
+* Date: 25.07.2008 inital version
+* Tele script by: Blackboy0
+* Coded by: Furt
+* Template by: Kitten - wowps forums
+* Email: *****
+* License: GNU General Public License (GPL)
+  */ -->
 <?php
 
 require './lib/db_connect.php';
-
 // require our database connection
 // which also contains the check_login.php
 // script. We have $logged_in for use.

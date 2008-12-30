@@ -1,33 +1,9 @@
 <?php
 
-
-
-$dbhost = 'localhost';
-
-
-// your database username.
-    $dbusername = 'root';
-
-// the password that corresponds to the above username.
-    $dbpasswd = 'password';
-
-// the database name that your username is associated with.
-    $database_name = 'logon';
-
-    
-    $connection = mysql_connect("$dbhost","$dbusername","$dbpasswd")
-
-    or die ("Couldn't connect to server.");
-
-
-$db = mysql_select_db("$database_name", $connection)
-
-    or die("Couldn't select database.");
-
-
-// we write this later on, ignore for now.
-
-
+	// database connect script.
+	$connection = mysql_connect($config['mysql_host'].":".$config['mysql_port'], $config['mysql_user'], $config['mysql_pass']) or die(mysql_error());
+	mysql_select_db($config['mysql_account']) or die(mysql_error());
+	
 include('check_login.php');
 
 

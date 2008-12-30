@@ -1,11 +1,10 @@
 <?php
 
-// database connect script.
-
-require 'db_connect.php';
+require 'config.php';		//database info
+require 'db_connect.php';    // database connect script.
 
 if($logged_in == 1) {
-    die('You are logged in, <b>'.$_SESSION['username'].'</b>.<br /><br /><center><span class="button"><a href="./lib/logout.php">Logout</a></span></center>');
+    echo('You are logged in, <b>'.$_SESSION['username'].'</b>.<br /><br /><center><span class="button"><a href="./lib/logout.php">Logout</a></span></center>');
 
 }
 

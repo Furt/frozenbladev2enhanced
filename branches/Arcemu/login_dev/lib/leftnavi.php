@@ -29,8 +29,8 @@
 		<!-- Account Links-->
 			
                 <li><a href="account.php">Create Account</a></li><br/><br/>
-				<li><a href="#">Change Password</a></li><br/><br/>
-				<li><a href="#">Get Password</a></li><br/><br/>
+				<li><a href="pcs.php">Change Password</a></li><br/><br/>
+				<li><a href="fps.php">Get Password</a></li><br/><br/>
 		
 		<!-- --------- -->		
 		

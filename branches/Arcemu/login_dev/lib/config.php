@@ -17,7 +17,7 @@
 	$ip = "logon.crimson-storm.net";
 	$port = "8093";
 	
- /******* Account Creation Settings **********************************************************
+ /******* System Settings **********************************************************
  *
  *      mysql_host - MySQL Host Address
  *      mysql_port - MySQL port
@@ -38,7 +38,7 @@
 	$config['mysql_character'] = 'character';
 	$config['mysql_world'] = 'world';
 	$config['mysql_website'] = 'website';
-    
+	
  /******* OTHER SETTINGS **********************************************************************
  *
  *      PageTitle - Title of the page.. 

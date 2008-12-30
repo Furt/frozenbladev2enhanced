@@ -1,5 +1,6 @@
 <?php
 
+require 'config.php';		//database info
 require 'db_connect.php';    // database connect script.
 
 if ($logged_in == 0) {
