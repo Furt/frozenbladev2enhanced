@@ -9,7 +9,7 @@ $dbhost = 'localhost';
     $dbusername = 'root';
 
 // the password that corresponds to the above username.
-    $dbpasswd = 'danielle';
+    $dbpasswd = 'password';
 
 // the database name that your username is associated with.
     $database_name = 'logon';
