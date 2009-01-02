@@ -4,9 +4,10 @@ require 'config.php';		//database info
 require 'db_connect.php';    // database connect script.
 
 if($logged_in == 1) {
-    echo('You are logged in, <b>'.$_SESSION['username'].'</b>.<br /><br /><center><span class="button"><a href="./lib/logout.php">Logout</a></span></center>');
+    echo('You are logged in, <b>'.$_SESSION['username'].'</b>.<br /><br /><center><span class="button"><a href="./lib/logout.php">Logout</a></span></center><br />');
 
-}
+
+} else {
 
 
 if (isset($_POST['submit'])) { // if form has been submitted
@@ -124,5 +125,6 @@ $info = mysql_fetch_array ($sqlmembers);
 </form>
 <br /><br />
 <?php
+}
 }
 ?>
