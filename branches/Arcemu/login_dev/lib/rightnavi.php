@@ -39,7 +39,7 @@
 
 </center>
 &nbsp;				Realmlist:
-<center>						<?php echo $config['RealmIP']; ?>
+<center>						<?php echo $config['server_ip']; ?>
 </center><br/>
 
 </font><div class="vote"></div><center><font class="style10">

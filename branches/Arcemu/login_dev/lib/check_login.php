@@ -10,8 +10,6 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     return;
 } else {
 
-    // remember, $_SESSION['password'] will be encrypted.
-
     if(!get_magic_quotes_gpc()) {
         $_SESSION['username'] = addslashes($_SESSION['username']);
     }
@@ -29,14 +27,12 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 
     $db_pass =  mysql_fetch_array ($sqlmembers);
 
-    // now we have encrypted pass from DB in
     //$db_pass['password'], stripslashes() just incase:
 
     $db_pass['password'] = stripslashes($db_pass['password']);
     $_SESSION['password'] = stripslashes($_SESSION['password']);
 
     //compare:
-
     if($_SESSION['password'] == $db_pass['password']) {
         // valid password for username
         $logged_in = 1; // they have correct info

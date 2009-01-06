@@ -46,7 +46,6 @@
  *      MaxIPs - Set this to the allowed MAX accounts Per IP Address. Disabled: 0 
  *      MaxEmails - Set this to the allowed MAX accounts Per Email. Disabled: 0
  *      EncryptedPass - Encrypted passwords = 1, Uncrypted = 0
- *      RealmIP - Set this to the IP address of your realm server
  *      PatchVersion - The Client patch number that the server allows to connect
  *		PayPal - The email for your paypal donations
  *		Teleporter Settings - default = 50g/teleport. ex -  $TELEPORT_COST = 954,
@@ -54,12 +53,11 @@
  * 
  *********************************************************************************************/
 
-	$config['Title'] = "MySite";
+	$config['Title'] = "FrozenBlade-Enhanced by Furt 2008";
 	$config['Sitename'] = "yoursite.com";
     $config['MaxIPs'] = '4';
     $config['MaxEmails'] = '0';
     $config['EncryptedPass'] = '0';
-    $config['RealmIP'] = 'your.realmlist.com';
     $config['PatchVersion'] = '3.0.3 WotLK';
 	$config['PayPal'] = 'paypal@email.com';
 	$config['teleport_cost'] = 50;

@@ -9,12 +9,8 @@
   */ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
-session_start();
 require_once('./lib/config.php');
 require('./lib/db_connect.php');
-// require our database connection
-// which also contains the check_login.php
-// script. We have $logged_in for use.
 if ($logged_in == 0) {
 include('./visitor.php');
 }
@@ -24,10 +20,10 @@ else { ?>
 <title><?php  echo $config['Title']; ?></title>
 
 <link rel="shortcut icon" href="images/favicon.ico">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<!--[if IE]><link href="css/ie-fix.css" rel="stylesheet" type="text/css"><![endif]-->
-<script type="text/javascript" src="./js/img-trans.js"></script>
-<script type="text/javascript" src="./js/pre-load.js"></script>
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<!--[if IE]><link href="style/ie-fix.css" rel="stylesheet" type="text/css"><![endif]-->
+<script type="text/javascript" src="style/img-trans.js"></script>
+<script type="text/javascript" src="style/pre-load.js"></script>
 </head><body>
 
 <div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
@@ -38,7 +34,7 @@ else { ?>
 
 <div class="bar"><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
 <?php
-include('./lib/leftnavi.php')
+include('./lib/leftnavi_user.php')
 ?>
 <td width="430" valign="top">
 
@@ -54,8 +50,6 @@ include('./lib/leftnavi.php')
 
 if(isset($_POST['submit']))
 {
-	$account = $_SESSION['username'];
-	$password = $db_pass['password'];
 	$character = $_POST['character'];
 	$location = $_POST['location'];
 
@@ -70,7 +64,7 @@ if(isset($_POST['submit']))
 	$character = mysql_real_escape_string($character);
 	$location = mysql_real_escape_string($location);
 
-	$query = "SELECT acct FROM accounts WHERE login = '".$account."' AND password = '".$password."'";
+	$query = "SELECT acct FROM accounts WHERE login = '".$_SESSION['username']."' AND password = '".$_SESSION['password']."'";
 
 	$result = mysql_query($query) or die(mysql_error());
 	$numrows = mysql_num_rows($result);

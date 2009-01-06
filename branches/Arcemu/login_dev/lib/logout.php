@@ -10,8 +10,7 @@ if ($logged_in == 0) {
 unset($_SESSION['username']);
 unset($_SESSION['password']);
 // kill session variables
-$_SESSION = array(); // reset session array
-session_destroy();   // destroy session.
+$_SESSION = array();
+session_destroy();
 header('Location:../home.php');
-// redirect them to anywhere you like.
 ?>
