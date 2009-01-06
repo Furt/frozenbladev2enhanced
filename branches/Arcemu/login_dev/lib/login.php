@@ -100,7 +100,8 @@ $info = mysql_fetch_array ($sqlmembers);
 
 
 ?>
-<center><p>Welcome back <?php echo $_SESSION['username']; ?>, <br /> you are logged in.<br /></center><span class="button"><a href="./lib/logout.php">Logout</a></span></center><br /><br /></p>
+<center><p>Please wait, <?php echo $_SESSION['username']; ?>, <br /> while we log you in.<br /></center></center>
+<META HTTP-EQUIV="refresh" CONTENT="3"><br /><br /></p>
 
 <?php
 

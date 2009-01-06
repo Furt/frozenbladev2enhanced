@@ -97,7 +97,7 @@ if(isset($_POST['submit']))
 	$row = mysql_fetch_array($result);
 	$race = $row[0];
 
-	if($row[1] < ($TELEPORT_COST * 10000))
+	if($row[1] < ($config['teleport_cost'] * 10000))
 	{
 		die("Your Character does not have enough Gold to be teleported");
 	}
@@ -244,7 +244,7 @@ if(isset($_POST['submit']))
 			break;
 	}
 
-	$newGold = $gold - ($TELEPORT_COST * 10000);
+	$newGold = $gold - ($config['teleport_cost'] * 10000);
 
 	$query = "UPDATE characters SET positionX = ".$x.", positionY = ".$y.", positionZ = ".$z.", mapid = ".$map.", gold = ".$newGold." WHERE acct = ".$acct." AND name = '".$character."'";
 	$result = mysql_query($query) or die(mysql_error());
@@ -264,7 +264,7 @@ else
 	?>
     <center>
     <form name=myform method=post action=teleporter.php>
-    (<b>Note</b>: Cost is <b><?php echo $TELEPORT_COST ?>g</b> for 1 teleport)
+    (<b>Note</b>: Cost is <b><?php echo $config['teleport_cost'] ?>g</b> for 1 teleport)
 	<br /><br />
     <table width="125" border="0">
   <tr>

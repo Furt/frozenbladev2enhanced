@@ -25,7 +25,7 @@
 					<?php    
 
 					
-							if (! $sock = @fsockopen($ip, $port, $num, $error, 5))
+							if (! $sock = @fsockopen($config['server_ip'], $config['server_port'], $num, $error, 5))
 								echo "<img src='images/temp/server-off.png'>";
 							else{
 								echo "<img src='images/temp/server-on.png'>";

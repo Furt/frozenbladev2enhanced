@@ -14,8 +14,8 @@
  *      Port - The port used for connection to the server
  * 
  *********************************************************************************************/
-	$ip = "logon.crimson-storm.net";
-	$port = "8093";
+	$config['server_ip'] = "logon.crimson-storm.net";
+	$config['server_port'] = "8093";
 	
  /******* System Settings **********************************************************
  *
@@ -62,7 +62,7 @@
     $config['RealmIP'] = 'your.realmlist.com';
     $config['PatchVersion'] = '3.0.3 WotLK';
 	$config['PayPal'] = 'paypal@email.com';
-	$TELEPORT_COST = 50;
+	$config['teleport_cost'] = 50;
 	
 /******* EMAIL SETTINGS **********************************************************************
  *

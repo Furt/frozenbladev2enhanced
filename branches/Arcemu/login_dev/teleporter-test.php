@@ -9,7 +9,9 @@
   */ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
-require './lib/db_connect.php';
+session_start();
+require_once('./lib/config.php');
+require('./lib/db_connect.php');
 // require our database connection
 // which also contains the check_login.php
 // script. We have $logged_in for use.
@@ -19,9 +21,6 @@ include('./visitor.php');
 else { ?>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<?php
-require_once('./lib/config.php')
-?>
 <title><?php  echo $config['Title']; ?></title>
 
 <link rel="shortcut icon" href="images/favicon.ico">
@@ -56,7 +55,7 @@ include('./lib/leftnavi.php')
 if(isset($_POST['submit']))
 {
 	$account = $_SESSION['username'];
-	$password = $_SESSION['password'];
+	$password = $db_pass['password'];
 	$character = $_POST['character'];
 	$location = $_POST['location'];
 
@@ -106,7 +105,7 @@ if(isset($_POST['submit']))
 	$row = mysql_fetch_array($result);
 	$race = $row[0];
 
-	if($row[1] < ($TELEPORT_COST * 10000))
+	if($row[1] < ($config['teleport_cost'] * 10000))
 	{
 		die("Your Character does not have enough Gold to be teleported");
 	}
@@ -253,7 +252,7 @@ if(isset($_POST['submit']))
 			break;
 	}
 
-	$newGold = $gold - ($TELEPORT_COST * 10000);
+	$newGold = $gold - ($config['teleport_cost'] * 10000);
 
 	$query = "UPDATE characters SET positionX = ".$x.", positionY = ".$y.", positionZ = ".$z.", mapid = ".$map.", gold = ".$newGold." WHERE acct = ".$acct." AND name = '".$character."'";
 	$result = mysql_query($query) or die(mysql_error());
@@ -273,7 +272,7 @@ else
 	?>
     <center>
     <form name=myform method=post action=teleporter.php>
-    (<b>Note</b>: Cost is <b><?php echo $TELEPORT_COST ?>g</b> for 1 teleport)
+    (<b>Note</b>: Cost is <b><?php echo $config['teleport_cost'] ?>g</b> for 1 teleport)
 	<br /><br />
     <table width="125" border="0">
   <tr>
