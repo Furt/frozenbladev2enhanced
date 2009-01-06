@@ -1,5 +1,8 @@
 <?php
-
+session_cache_limiter('private');
+$cache_limiter = session_cache_limiter();
+session_cache_expire(15);
+$cache_expire = session_cache_expire();
 session_start();
 
 if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {

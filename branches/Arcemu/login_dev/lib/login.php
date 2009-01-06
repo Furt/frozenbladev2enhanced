@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) { // if form has been submitted
 
     if(!$_POST['uname'] | !$_POST['passwd']) {
 
-        die('You did not fill in a required field.');
+        echo('You did not fill in a required field.');
 
     }
 
@@ -46,9 +46,9 @@ $info = mysql_fetch_array ($sqlmembers);
 
     if ($check == 0) {
 
-        die('That Account does not exist in our database.');
+        echo('<br />That Account does not exist in our database.<br /><br />');
 
-    }
+		}
 
 
 
@@ -69,9 +69,9 @@ $info = mysql_fetch_array ($sqlmembers);
 
     if ($_POST['passwd'] != $info['password']) {
 
-        echo "Incorrect password, please try again.";
+        echo "<br />Incorrect <b>password</b>, please try again.<br /><br />";
 
-    }
+		} else {
 
 
 
@@ -105,7 +105,7 @@ $info = mysql_fetch_array ($sqlmembers);
 
 <?php
 
-} else {    // if form hasn't been submitted
+} } else {    // if form hasn't been submitted
 
 ?>
 <br />
