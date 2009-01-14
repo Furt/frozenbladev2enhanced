@@ -25,7 +25,7 @@
 					<?php    
 
 					
-							if (! $sock = @fsockopen($ip, $port, $num, $error, 5))
+							if (! $sock = @fsockopen($config['ip'], $config['port'], $num, $error, 5))
 								echo "<img src='images/temp/server-off.png'>";
 							else{
 								echo "<img src='images/temp/server-on.png'>";
@@ -39,7 +39,7 @@
 
 </center>
 &nbsp;				Realmlist:
-<center>						<?php echo $config['RealmIP']; ?>
+<center>						<?php echo $config['ip']; ?>
 </center><br/>
 
 </font><div class="vote"></div><center><font class="style10">
