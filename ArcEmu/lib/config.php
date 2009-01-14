@@ -14,8 +14,8 @@
  *      Port - The port used for connection to the server
  * 
  *********************************************************************************************/
-	$ip = "logon.crimson-storm.net";
-	$port = "8093";
+	$config['ip'] = "your.realmlist.com";
+	$config['port'] = "8093";
 	
  /******* Account Creation Settings **********************************************************
  *
@@ -33,7 +33,7 @@
     $config['mysql_host'] = 'localhost';
 	$config['mysql_port'] = '3306';
     $config['mysql_user'] = 'root';
-    $config['mysql_pass'] = 'pass';
+    $config['mysql_pass'] = 'password';
     $config['mysql_account'] = 'logon';
 	$config['mysql_character'] = 'character';
 	$config['mysql_world'] = 'world';
@@ -59,7 +59,6 @@
     $config['MaxIPs'] = '4';
     $config['MaxEmails'] = '0';
     $config['EncryptedPass'] = '0';
-    $config['RealmIP'] = 'your.realmlist.com';
     $config['PatchVersion'] = '3.0.3 WotLK';
 	$config['PayPal'] = 'paypal@email.com';
 	$TELEPORT_COST = 50;
