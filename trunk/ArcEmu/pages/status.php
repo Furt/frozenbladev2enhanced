@@ -1,24 +1,10 @@
-<!-- /**
-* Project Name: FrozenBlade V2 Enhanced"
-* Date: 25.07.2008 inital version
-* Coded by: Furt
-* Template by: Kitten - wowps forums
-* Email: *****
-* License: GNU General Public License (GPL)
-  */ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php 
-require_once('./lib/config.php');
-include('./lib/header.php');
-?>
-<body>
-<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
-<div class="banner"></div>
-<div class="bar"><?php include('./lib/topnavi.php') ?><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
-<br /><center><img src="images/text/status.png"></center>
-<br />
-
-<!-- script -->
+<td width="430" valign="top">
+<div align="center">
+<br/><br/><br/>
+</div>
+      <div align="center">
+	  <center><img src="images/text/status.png"></center><br><br>
+  <!-- script start -->
 <?php
 include "./lib/arrayXML.class.php";
 include "./lib/StatsXML.class.php";
@@ -68,10 +54,13 @@ echo '<br /><center>';
 echo 'Uptime: ' . $xml->getUptime();
 echo '</center><br />';
 ?>
-<!-- replace x with what u have your stats.xml set to update to -->
-<center><b><u>Note:</u> This page only updates every x minutes via stats.xml</b></center>
-<!-- script end -->
-
-<?php
-include('./lib/footer.php');
-?>
+<!-- Just a place to add personal notes to the page -->
+<center><?php echo($config['Note']); ?></center>
+          <!-- script stop -->
+          <center><br/>
+        </div>
+      </div>
+      <div align="center">
+        </center>
+      </div>
+</div><br /></td>

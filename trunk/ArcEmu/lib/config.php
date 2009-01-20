@@ -14,10 +14,10 @@
  *      Port - The port used for connection to the server
  * 
  *********************************************************************************************/
-	$config['ip'] = "your.realmlist.com";
-	$config['port'] = "8093";
+	$config['ip'] = "logon.crimson-storm.net";
+	$config['port'] = "8085";
 	
- /******* Account Creation Settings **********************************************************
+ /******* MySql Settings **********************************************************
  *
  *      mysql_host - MySQL Host Address
  *      mysql_port - MySQL port
@@ -51,17 +51,19 @@
  *		PayPal - The email for your paypal donations
  *		Teleporter Settings - default = 50g/teleport. ex -  $TELEPORT_COST = 954,
  *		would mean 954 gold per transport
+ *		Note - Server status message at bottom of body
  * 
  *********************************************************************************************/
 
-	$config['Title'] = "MySite";
+	$config['Title'] = "FrozenBlade-Enhanced v1.5 by Furt";
 	$config['Sitename'] = "yoursite.com";
     $config['MaxIPs'] = '4';
     $config['MaxEmails'] = '0';
     $config['EncryptedPass'] = '0';
     $config['PatchVersion'] = '3.0.3 WotLK';
 	$config['PayPal'] = 'paypal@email.com';
-	$TELEPORT_COST = 50;
+	$config['teleport_cost'] = 50;
+	$config['Note'] = '<b><u>Note:</u> This page only updates every x minutes via stats.xml</b><br>You can add your own info here via config.php';
 	
 /******* EMAIL SETTINGS **********************************************************************
  *

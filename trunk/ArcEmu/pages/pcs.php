@@ -6,18 +6,6 @@
 * Email: *****
 * License: GNU General Public License (GPL)
   */ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php 
-require_once('./lib/config.php');
-include('./lib/header.php');
-?>
-<body>
-<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
-<div class="banner"></div>
-<div class="bar"><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
-<?php
-include('./lib/leftnavi.php')
-?>
 <td width="430" valign="top">
 <div class="story-top"><div align="center">
 <br/><br/><br/><br/><br/><br/><img src="images/text/pcs.png">
@@ -111,11 +99,11 @@ if(!empty($_POST)){
 
     <center>
       <div style="width:300px">
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-		          <div align="center"><br><br><br>
+        <form action="home.php?act=Change_Pass" method="POST">
+		          <div align="center"><br><br>
         <table width="100%" border="0" cellspacing="1" cellpadding="3">
 			<tr>
-				<td><input type="button" OnClick="window.location='./account.php'" value="Create Account" class="button"/></td><td><input type="button" OnClick="window.location='./fps.php'" value="Forgotten Password" class="button"/></td>
+				<td></td><td></td>
 			</tr>
             <tr class="head"><th colspan="2"></th></tr>
             <tr>
@@ -147,7 +135,7 @@ if(!empty($_POST)){
           </tr>
 
              				
-        </table>
+        </table><br>
         <input type="button" class="button" value="Back" onClick="history.go(-1)" />
         <input type="submit" value="Submit" class="button"/>
         </form>
@@ -172,7 +160,7 @@ if(!empty($_POST)){
     </center>
 	         <!-- script stop -->
           
-          <center><br/>
+          <center>
         </div>
       </div>
       <div align="center">
@@ -181,7 +169,3 @@ if(!empty($_POST)){
 </div>
 <div class="story-bot" align="center"><br/>
 </div><br /></td>
-<?php
-include('./lib/rightnavi.php');
-include('./lib/footer.php');
-?>

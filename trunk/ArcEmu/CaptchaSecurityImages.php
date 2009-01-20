@@ -36,7 +36,7 @@ class CaptchaSecurityImages {
             /* font size will be 75% of the image height */
             case 0: $this->font = './images/monofont.ttf'; $font_size = $height * 0.75; break;
             /* font size will be 45% of the image height */
-            case 1: $this->font = './images/earthquake.ttf'; $font_size = $height * 0.45; break;
+            case 1: $this->font = './images/monofont.ttf'; $font_size = $height * 0.75; break;
         }
         
 		$image = @imagecreate($width, $height) or die('Cannot initialize new GD image stream');

@@ -6,7 +6,6 @@
 * Email: *****
 * License: GNU General Public License (GPL)
   */ -->
-
 <td width="144" valign="top"><div id="links"><font class="style9">
 
 
@@ -16,9 +15,9 @@
 		<!-- Menu Links -->
 	
 				<li><a href="home.php">Home</a></li><br/><br/>
-				<li><a href="donate.php">Make a Donation</a></li><br/><br/>
-				<li><a href="connect.php">Connection Guide</a></li><br/><br/>
-				<li><a href="staff.php">Staff Members</a></li><br/><br/>
+				<li><a href="home.php?act=Donate">Make a Donation</a></li><br/><br/>
+				<li><a href="home.php?act=Connect">Connection Guide</a></li><br/><br/>
+				<li><a href="home.php?act=Staff_Members">Staff Members</a></li><br/><br/>
 	
 		<!-- --------- -->
 		
@@ -28,9 +27,9 @@
 		
 		<!-- Account Links-->
 			
-                <li><a href="account.php">Create Account</a></li><br/><br/>
-				<li><a href="pcs.php">Change Password</a></li><br/><br/>
-				<li><a href="fps.php">Get Password</a></li><br/><br/>
+                <li><a href="home.php?act=Account">Create Account</a></li><br/><br/>
+				<li><a href="home.php?act=Change_Pass">Change Password</a></li><br/><br/>
+				<li><a href="home.php?act=Get_Pass">Get Password</a></li><br/><br/>
 		
 		<!-- --------- -->		
 		
@@ -40,9 +39,9 @@
 		
 		<!-- Workshop Links -->
 			
-				<li><a href="unstucker.php">Unstucker</a></li><br/><br/>
-				<li><a href="teleporter.php">Teleporter</a></li><br/><br/>
-				<li><a href="status.php">Status</a></li><br/><br/>
+				<li><a href="home.php?act=Unstucker">Unstucker</a></li><br/><br/>
+				<li><a href="home.php?act=Teleporter">Teleporter</a></li><br/><br/>
+				<li><a href="home.php?act=Status">Status</a></li><br/><br/>
 		
 		<!-- --------- -->
 			
@@ -61,4 +60,4 @@
 		<!-- --------- -->	
 	
 	
-</font></div><br/><a href="http://wowps.org/forum"><div class="by"></div></a></td>
+</font></div><br/><a href="http://wowps.org/forum"><div class="by"></div></a></div></td>

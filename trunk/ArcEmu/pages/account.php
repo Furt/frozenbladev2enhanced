@@ -1,24 +1,12 @@
 <!-- /**
 * Project Name: FrozenBlade V2 Enhanced"
 * Date: 25.07.2008 inital version
-* Reg script by: Taek
+* Unstuck script by: Blackboy0
 * Coded by: Furt
 * Template by: Kitten - wowps forums
 * Email: *****
 * License: GNU General Public License (GPL)
   */ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php 
-require_once('./lib/config.php');
-include('./lib/header.php');
-?>
-<body>
-<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
-<div class="banner"></div>
-<div class="bar"></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
-<?php
-include('./lib/leftnavi.php');
-?>
 <td width="430" valign="top">
 
 <div class="story-top"><div align="center">
@@ -124,13 +112,13 @@ if(!empty($_POST)){
         
         
       </div>
-      <div style="width:150px">
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-          <div align="center"><br>
+      <div style="width:300px">
+        <form action="home.php?act=Account" method="POST">
+          <div align="center">
             <br><br>
             <table width="100%" border="0" cellspacing="1" cellpadding="3">
               <tr>
-                <td><input type="button" OnClick="window.location='./pcs.php'" value="Password Changer" class="button"/></td><td><input type="button" OnClick="window.location='./fps.php'" value="Forgotten Password" class="button"/></td>
+                <td></td><td></td>
                 </tr>
               <tr class="head">
                 <th colspan="2"></th></tr>
@@ -164,7 +152,7 @@ if(!empty($_POST)){
                 </tr>
               
               
-            </table>
+            </table><br>
             <input type="button" class="button" value="Back" onClick="history.go(-1)" />
             <input type="submit" value="Submit" class="button"/>
           </div></form>
@@ -185,7 +173,7 @@ if(!empty($_POST)){
 		<center>
           <!-- account reg stop -->
           
-          <center><br/>
+          <center>
         </div>
       </div>
       <div align="center">
@@ -199,7 +187,3 @@ if(!empty($_POST)){
 <!-- End News Post -->
 
 <br /></td>
-<?php
-include('./lib/rightnavi.php');
-include('./lib/footer.php');
-?>
