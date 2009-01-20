@@ -1,0 +1,68 @@
+README for phpns
+	http://phpns.alecwh.com
+
+VERSION
+===================
+	2.2.3
+		stable release [build 1]
+
+DESCRIPTION
+===================
+Phpns is a free, open-source PHP News System that will enable you to design your website the way you want, and include a dynamic CMS with one line of code. Phpns is released under the GNU GPL license, allowing you to edit, distribute, and share your customization.
+
+LICENSE
+===================
+Phpns is released under the GNU GPL (General Public License), which allows you to freely download, use, and modify. More information can be found at the LICENSE file in this directory.
+
+TINYMCE, the WYSIWYG editor included with this installation is licensed under the LGPL, which is available at /inc/wysiwyg/LICENSE. Many thanks to the fine developers behind the application, you can find them at http://tinymce.moxiecode.com/.
+
+CODEPRESS, the code editor included with this installation is licensed under the LGPL, which is available at /inc/wysiwyg/LICENSE. Many thanks to the fine developers behind the application, you can find them at http://codepress.org/.
+
+AUTHORS
+===================
+The following people have contributed to phpns:
+	Alec Henriksen
+		Project founder and lead developer. <alecwh[at]gmail.com>
+	Kyle Osborn
+		Developer, usually offers advice and small code contributions. <k.p.osborn[at]gmail.com>
+	Joe Lombardo
+		Misc guide writeups and HOWTO. [no longer active]
+	
+* We're always looking for people to help. Head over to http://phpns.alecwh.com and contact us if you're interested.
+
+INSTALLATION
+====================
+Check the file INSTALL in this directory for installation directions.
+	Summary:
+		Extract the archive in any directory you want.
+		Visit the directory in the browser
+		Follow instructions
+		
+		Note: PHP5 is required!
+		
+UPGRADE
+====================
+To upgrade from the previous version, follow the instructions on http://phpns.com. Usually, you will download a .zip or tarball, extract it into the root of your phpns installation (overwriting any files), and run, if present, the upgrade_from_2.x.x.php file.*
+	* To run scripts, just upload them and run them in your web browser. Check INSTALL for more instructions.
+		
+SCRIPT USE
+====================
+After your script is installed, you can 'include' the news by the following line:
+	<?php include("/path/to/shownews.php"); ?>
+	
+Customization can be added, such as limit, category, template, offset. Check "../help.php" for more information about "pre-include variables".
+		
+TROUBLESHOOTING
+====================
+Check http://phpns.alecwh.com/ for troubleshooting information, or go to our Launchpad project:
+		http://launchpad.net/phpns
+		
+Or the documentation @ ../help.php
+
+Notice: Forums, IRC network, and mailing lists are no longer permitted. Please post all questions to Launchpad answers. Each question is seen by an administrator, and will be answered!
+
+MORE INFORMATION
+====================
+The phpns website is located at: <http://phpns.alecwh.com>
+	Main website: http://phpns.alecwh.com/
+	Bug Tracking and bazaar branches: http://launchpad.net/phpns
