@@ -1,24 +1,12 @@
 <!-- /**
 * Project Name: FrozenBlade V2 Enhanced"
 * Date: 25.07.2008 inital version
-* Tele script by: Blackboy0
+* Unstuck script by: Blackboy0
 * Coded by: Furt
 * Template by: Kitten - wowps forums
 * Email: *****
 * License: GNU General Public License (GPL)
   */ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php 
-require_once('./lib/config.php');
-include('./lib/header.php');
-?>
-<body>
-<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
-<div class="banner"></div>
-<div class="bar"><br /></div><div class="inner"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
-<?php
-include('./lib/leftnavi.php')
-?>
 <td width="430" valign="top">
 <div class="story-top"><div align="center">
 <br/><br/><br/><br/><br/><br/><img src="images/text/teleporter.png">
@@ -51,10 +39,7 @@ if(isset($_POST['submit']))
 
 	$result = mysql_query($query) or die(mysql_error());
 	$numrows = mysql_num_rows($result);
-	?>
-
 	
-	<?php
 	//if no rows exist, wrong username/password
 	if($numrows == 0)
 	{
@@ -82,7 +67,7 @@ if(isset($_POST['submit']))
 	$row = mysql_fetch_array($result);
 	$race = $row[0];
 
-	if($row[1] < ($TELEPORT_COST * 10000))
+	if($row[1] < ($config['teleport_cost'] * 10000))
 	{
 		die("Your Character does not have enough Gold to be teleported");
 	}
@@ -229,7 +214,7 @@ if(isset($_POST['submit']))
 			break;
 	}
 
-	$newGold = $gold - ($TELEPORT_COST * 10000);
+	$newGold = $gold - ($config['teleport_cost'] * 10000);
 
 	$query = "UPDATE characters SET positionX = ".$x.", positionY = ".$y.", positionZ = ".$z.", mapid = ".$map.", gold = ".$newGold." WHERE acct = ".$acct." AND name = '".$character."'";
 	$result = mysql_query($query) or die(mysql_error());
@@ -248,21 +233,22 @@ else
 {
 	?>
     <center>
-    <form name=myform method=post action=teleporter.php>
-    (<b>Note</b>: Cost is <b><?php echo $TELEPORT_COST ?>g</b> for 1 teleport)
+    <form action="home.php?act=Teleporter" method="post" name="myform" id="myform">
+    (<b>Note</b>: Cost is <b><?php echo $config['teleport_cost'] ?>g</b> for 1 teleport)
 	<br /><br />
-    <table width="125" border="0">
+
+    <table width="200" border="0">
   <tr>
     <td>Account:</td>
-    <td><input type=text name=account value=''></td>
-  </tr>
-  <tr>
-    <td>Password:</td>
-    <td><input type=password name=password value=''></td>
+    <td><input type="text" name="account" value='' /></td>
   </tr>
   <tr>
     <td>Character:</td>
-    <td><input type=text name=character value=''></td>
+    <td><input type="text" name="character" value='' /></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input type="password" name="password" value='' /></td>
   </tr>
   <tr>
     <td>Location:</td>
@@ -297,7 +283,7 @@ else
 
           <!-- script stop -->
           
-          <center><br/>
+          <center>
         </div>
       </div>
       <div align="center">
@@ -306,7 +292,3 @@ else
 </div>
 <div class="story-bot" align="center"><br/>
 </div><br /></td>
-<?php
-include('./lib/rightnavi.php');
-include('./lib/footer.php');
-?>

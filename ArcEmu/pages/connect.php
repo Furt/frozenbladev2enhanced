@@ -6,19 +6,6 @@
 * Email: *****
 * License: GNU General Public License (GPL)
   */ -->
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php 
-require_once('./lib/config.php');
-include('./lib/header.php');
-?>
-<body>
-<div class="maintile"><div class="blue"><div class="gryphon-right"><div class="gryphon-left"></div></div></div></div><div class="wowlogo"></div><div></div><div class="container"><div class="top"></div>
-<div class="banner"></div>
-<div class="bar"></div><div class="inner2"><table align="center" width="718" border="0" cellspacing="1" cellpadding="1"><tr>
-<?php
-include('./lib/leftnavi.php');
-?>
 <td width="574" valign="top">
 <div class="story-top8">
 <div align="center" style="text-align:bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
@@ -99,6 +86,3 @@ Once that is done, you are all ready to log in with your account information and
 Please wait up to at most 10 minutes before your new account will be loaded into our the logon server.
 
 </div></center></div><div class="story-bot2"></div><br /></td>
-<?php
-include('./lib/footer.php');
-?>

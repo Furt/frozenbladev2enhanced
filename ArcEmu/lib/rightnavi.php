@@ -12,7 +12,7 @@
 
 	<!-- Create Account Image/Link -->
 		
-		<a href="#"><div class="join"></div></a>
+		<a href="home.php?act=Account"><div class="join"></div></a>
 
 	<!-- --------- -->
 

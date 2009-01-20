@@ -4,7 +4,7 @@
   *
   * Coded and Designed
   * By Kitten @ WoWps.org
-  *
+  *	
   * Template copyright WoWps.org 2008
   * http://www.wowps.org/
   *
@@ -87,8 +87,22 @@ body {
 	margin: 0 0 0 0px;
 	height: 38px;
 	width: 755px;}
+.leftnavi {
+	background-image: url(../images/temp/left-navi.gif);
+	background-position:right;
+	background-repeat:repeat-y;
+	height: 100%;
+	width: 148px;
+	margin: 0 0 0 0;}
+.rightnavi {
+	background-image: url(../images/temp/right-navi.gif);
+	background-position:left;
+	background-repeat:repeat-y;
+	height: 100%;
+	width: 148px;
+	margin: 0 0 0 0;}
 .inner {
-	background-image: url(../images/temp/inner-bg.gif);
+	background-image: url(../images/temp/inner-bgtest.gif);
 	background-position:right;
 	background-repeat:repeat-y;
 	height: 100%;
