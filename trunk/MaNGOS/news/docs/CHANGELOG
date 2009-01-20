@@ -1,0 +1,112 @@
+PUBLIC CHANGE LOG
+=====================
+
+version 2.2.3 @ July 7 2008 @ 12:00am MT
+	* final feature release prep
+		* updated about page, removed invalid support methods
+		* emphasized Launchpad project page
+	* minor bug fixes
+	* fixed bug with cookie destruction
+	* CSS fixes (inconsistant message styles)
+	* spelling and website inconsistancies/mistakes
+
+version 2.2.2 @ June 13 2008 @ 12:00am MT
+	* regular small bug fixes
+	* SEF URLs fixed (problematic characters)
+	* RSS/SEF URL addition
+	* help.php fixes and updates
+	* $phpns['override_sef'] deprecation (introducing $phpns['sef'])
+	* GUI improvements
+	* welcome page implemented
+	* SEF URL code generation fix
+
+version 2.2.1 @ May 18 2008 @ 12:00am MT
+	* minor bug fixes
+	* notification (email) optimization and fixes
+	* CSS changes for Firefox 3
+	* some grammar fixes
+	* bug affecting SEF URLs (http://phpns.alecwh.com/forums/comments.php?DiscussionID=9&page=1#Item_0, thanks to jbdesignandphoto for the fix)
+	* help section updates
+
+version 2.2.0 @ Apr 15 2008 @ 12:00am MT
+	* major bug fixes
+	* default theme enhancements
+	* usability enhancements
+	* security enhancements
+	* major feature additions
+		* PHP code can be used in themes
+		* freeze/cache management
+			* customized with pre-include variables
+	* temp. variable change ({full_story} to {extended_article}) to minimize confusion
+	* help.php clarifications, additions
+	* email notifications for misc. actions
+		* specific to each user (ON/OFF)
+	* $phpns['script_link'] variable introduced for linking optimization
+	* misc theme changes/fixes
+	* all links related to phpns.com changed to correct domain (phpns.alecwh.com)
+	* rank-specific category access support
+	* integration wizard update and fixes
+	* auto-complete turned off on codepress textareas
+
+version 2.1.3 @ Mar 27 2008 @ 4:00am MT
+	* various minor bug fixes
+	* large bug involving article publishing
+	* security fix involving activation permissions
+	* opera bug fix with codepress
+	* GUI mods and usability updates
+	* new logo update
+	* major help.php redo
+
+version 2.1.2 @ Feb 17 2008 5:12pm MT
+	* Fixed a small, yet important bug involving login theme {content} replacement
+	
+version 2.1.1 @ Feb 14 2008 12:00am MT
+	* Many bug fixes
+	* main theme tweaks and usability fixes
+	* install script optimization/design tweaks
+	* login theme enhancements
+	* logo change
+	* shownews.php optimization
+		* important variable(s) change (switch to arrays from variables)
+	* icons added
+	* attempt to delete /install and db backup options
+	* different form tweaks
+	* RSS and ATOM functionallity improved dramatically
+	* modified error and success messages; now reflects color confirmation (green=success red=error)
+	 
+version 2.1.1beta1 @ Tues, Jan 22 9:17pm MT
+
+	* The whole slew of bug fixes
+	* Security fixes and enhancements
+	* misc. usability enhancements
+	* codepress integration
+	* installation overhaul
+		* more options
+	* shownews.php optimization and overhaul
+		* pagination
+		* additional customization options
+		* slew of bug fixes
+	* re-wordings
+
+version 2..1alpha2 @ Tues, Jan 5 2008 5:21pm MT
+	* Redesign of article form(s)
+	* Improved WYSIWYG editor design
+	* Improved shownews.php customization
+		* Added pagination and customization support
+	* Improved default theme
+	* Enhanced integration wizard
+	* Many bugs that plagued the previous release
+	* Image uploading support
+	* Other misc. fixes...
+
+version 2.1.1alpha1 @ Sun, Nov 25 2007 7:10am MT
+	* Everything has changed from v1.* series, recoded from base.
+	* Easier installation
+	* Improved WYSIWYG editor (more features, faster)
+	* A lot more customization, and cleaner code
+	* XSS protection
+	* Better base theme, plus alternate
+
+=== v1 INFORMATION NOT AVAILABLE ===
+
+Pre 2.1.1alpha1 releases were highly unorganized, so no CHANGELOG was ever recorded. 
