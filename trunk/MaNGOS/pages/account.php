@@ -57,7 +57,7 @@ function addUser(){
     }
     
     # Encrypt Password & Get IP
-    $encrypted_password = SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$_POST['password']."')))
+    $encrypted_password = sha1(strtoupper($_POST[login]) . ':' . strtoupper($_POST[password])); 
     $ip = $_SERVER['REMOTE_ADDR'];
     
     # Connect to database
