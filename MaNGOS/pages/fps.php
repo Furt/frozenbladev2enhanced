@@ -61,7 +61,7 @@ function RetrievePassword(){
     
     if($config['EncryptedPass'])
     {
-        $update = "UPDATE `account` SET `sha_pass_hash` = \"".SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$ranpassword."')))."\" WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
+        $update = "UPDATE `account` SET `sha_pass_hash` = \"".sha1(strtoupper($_POST[login]) . ':' . strtoupper($_POST[password]))."\" WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
         $res = mysql_query($update, $db);
         if(!$res) return $error[] = 'Database: '.mysql_error();
         $email = 'The password for account <span style="color:#00FF00"><strong>'.htmlentities($_POST['login']).'</strong></span> has been changed to <span style="color:#00FF00"><strong>'.$ranpassword.'</strong></span>';

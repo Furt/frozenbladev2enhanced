@@ -46,8 +46,8 @@ function ModifyPassword(){
     if (!empty($error)) return false;
 
     # Gather Passwords & IP
-    $encrypted_oldpassword = SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$_POST['oldpassword']."')));
-    $encrypted_newpassword = SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$_POST['newpassword']."')));
+    $encrypted_oldpassword = sha1(strtoupper($_POST[login]) . ':' . strtoupper($_POST[oldpassword]));
+    $encrypted_newpassword = sha1(strtoupper($_POST[login]) . ':' . strtoupper($_POST[newpassword]));
     $ip = $_SERVER['REMOTE_ADDR'];
     
     # Connect to database
