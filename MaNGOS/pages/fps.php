@@ -48,9 +48,9 @@ function RetrievePassword(){
 
     if($config['EncryptedPass'])
     {
-        $query = "SELECT `encrypted_password` FROM `accounts` WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' AND `email` = '".mysql_real_escape_string($_POST['email'])."' LIMIT 1";
+        $query = "SELECT `sha_pass_hash` FROM `account` WHERE `username` = '".mysql_real_escape_string($_POST['login'])."' AND `email` = '".mysql_real_escape_string($_POST['email'])."' LIMIT 1";
     }else{
-        $query = "SELECT `password` FROM `accounts` WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' AND `email` = '".mysql_real_escape_string($_POST['email'])."' LIMIT 1";
+        die('You must use encrypted passwords!');
     }
     $res = mysql_query($query, $db);
     if (!$res) return $error[] = 'Database: '.mysql_error();
@@ -61,17 +61,13 @@ function RetrievePassword(){
     
     if($config['EncryptedPass'])
     {
-        $update = "UPDATE `accounts` SET `encrypted_password` = \"".sha1(strtoupper($_POST['login']).":".strtoupper($ranpassword))."\" WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
+        $update = "UPDATE `account` SET `sha_pass_hash` = \"".SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$ranpassword."')))."\" WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
         $res = mysql_query($update, $db);
         if(!$res) return $error[] = 'Database: '.mysql_error();
         $email = 'The password for account <span style="color:#00FF00"><strong>'.htmlentities($_POST['login']).'</strong></span> has been changed to <span style="color:#00FF00"><strong>'.$ranpassword.'</strong></span>';
     }else{
-			//Changed retrievePassword query to update password field with a random generated password.
-        $update = "UPDATE `accounts` SET `password` = \"$ranpassword\" WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
-		$res = mysql_query($update, $db);
-		if(!$res) return $error[] = 'Database: '.mysql_error();
-        $email = 'The password for account <span style="color:#00FF00"><strong>'.htmlentities($_POST['login']).'</strong></span> has been changed to <span style="color:#00FF00"><strong>'.$ranpassword.'</strong></span>';
-    }
+		die('You must use encrypted passwords!');
+	}
     
     if($config['EnableEmail'])
     {

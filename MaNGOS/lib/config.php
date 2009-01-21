@@ -34,9 +34,9 @@
 	$config['mysql_port'] = '3306';
     $config['mysql_user'] = 'root';
     $config['mysql_pass'] = 'password';
-    $config['mysql_account'] = 'logon';
-	$config['mysql_character'] = 'character';
-	$config['mysql_world'] = 'world';
+    $config['mysql_account'] = 'login';
+	$config['mysql_character'] = 'wotlkchar';
+	$config['mysql_world'] = 'wotlk';
 	$config['mysql_website'] = 'website';
     
  /******* OTHER SETTINGS **********************************************************************
@@ -59,7 +59,7 @@
 	$config['Sitename'] = "yoursite.com";
     $config['MaxIPs'] = '4';
     $config['MaxEmails'] = '0';
-    $config['EncryptedPass'] = '0';
+    $config['EncryptedPass'] = '1'; //Do not touch this leave 1
     $config['PatchVersion'] = '3.0.3 WotLK';
 	$config['PayPal'] = 'paypal@email.com';
 	$config['teleport_cost'] = 50;

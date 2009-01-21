@@ -56,9 +56,8 @@ function addUser(){
         if (!empty($error)) return false;
     }
     
-    # Gather Password & IP
-    # $encrypted_password = sha1($_POST['password'][1]);
-    $encrypted_password = sha1(strtoupper($_POST['login']).":".strtoupper($_POST['password'][1]));
+    # Encrypt Password & Get IP
+    $encrypted_password = SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$_POST['password']."')))
     $ip = $_SERVER['REMOTE_ADDR'];
     
     # Connect to database
@@ -67,19 +66,19 @@ function addUser(){
     if (!@mysql_select_db($config['mysql_account'], $db)) return $error[] = 'Database: '.mysql_error();
 
     # Check make sure user isnt ipbanned 
-    $BanCheck = mysql_query("SELECT * FROM ipbans WHERE ip = '$ip' || ip = '$ip/32' LIMIT 1");
+    $BanCheck = mysql_query("SELECT * FROM ip_banned WHERE ip = '$ip' || ip = '$ip/32' LIMIT 1");
     $ban = mysql_num_rows($BanCheck);
     if ($ban == 1) { return $error[] = 'You Have Been Banned From This Server'; }
     
     # Check account limit for IP address
     if($config['MaxIPs'] > 0)
     {
-        $UserCheck = mysql_query("SELECT * FROM accounts WHERE lastip = '$ip'");
+        $UserCheck = mysql_query("SELECT * FROM account WHERE last_ip = '$ip'");
         if (mysql_num_rows($UserCheck) >= $config['MaxIPs']) return $error[] = '<font size=2 face=Tahoma><br /><b> You have reached your maximum amount of accounts</b></font>';
     }
 
     # Check username is not in use already
-    $query = "SELECT `acct` FROM `accounts` WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
+    $query = "SELECT `id` FROM `account` WHERE `username` = '".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
     $res = mysql_query($query, $db);
     if (!$res) return $error[] = 'Database: '.mysql_error();
     if (mysql_num_rows($res) > 0) return $error[] = 'Username already in use.';
@@ -87,16 +86,16 @@ function addUser(){
     # Check account limit for email
     if($config['MaxEmails'] > 0)
     {
-        $email = "SELECT `acct` FROM `accounts` WHERE `email` = '".mysql_real_escape_string($_POST['email'])."'";
+        $email = "SELECT `id` FROM `account` WHERE `email` = '".mysql_real_escape_string($_POST['email'])."'";
         $re = mysql_query($email, $db);
         if (!$re) return $error[] = 'Database: '.mysql_error();
         if (mysql_num_rows($re) >= $config['MaxEmails']) return $error[] = '<font size=2 face=Tahoma><br /><b> You have reached your maximum amount of accounts using that email address.</b></font>';
     }
 
     if($config['EncryptedPass'] > 0)
-        $query = "INSERT INTO `accounts` (`acct`, `login`, `encrypted_password`, `gm`, `banned`, `lastlogin`, `lastip`, `email`, `flags`, `forceLanguage`, `muted`) VALUES (NULL, '".mysql_real_escape_string($_POST['login'])."', '$encrypted_password', '0', '0', NOW(), '".$_SERVER['REMOTE_ADDR']."', '".mysql_real_escape_string($_POST['email'])."', '".mysql_real_escape_string($_POST['flag'])."', 'enUS', '0')";
+        $query = "INSERT INTO `accounts` (`username`, `sha_pass_hash`, `gmlevel`, `email`, `joindate`, `last_ip`, `expansion`) VALUES ('".mysql_real_escape_string($_POST['login'])."', '$encrypted_password', '0', '".mysql_real_escape_string($_POST['email'])."', NOW(), '".$_SERVER['REMOTE_ADDR']."', '".mysql_real_escape_string($_POST['flag'])."')";
     else
-        $query = "INSERT INTO `accounts` (`acct`, `login`, `password`, `gm`, `banned`, `lastlogin`, `lastip`, `email`, `flags`, `forceLanguage`, `muted`) VALUES (NULL, '".mysql_real_escape_string($_POST['login'])."', '".mysql_real_escape_string($_POST['password'][1])."', '0', '0', NOW(), '".$_SERVER['REMOTE_ADDR']."', '".mysql_real_escape_string($_POST['email'])."', '".mysql_real_escape_string($_POST['flag'])."', 'enUS', '0')";
+        die('You must you encrypted passwords!');
 
     $res = mysql_query($query, $db);
     if (!$res) return $error[] = 'Database: '.mysql_error();
@@ -138,8 +137,8 @@ if(!empty($_POST)){
               <th>Account Type:</th><td>
                 <select name="flag" type="select">
                   <option value="0">Normal</option>
-                  <option value="16">Burning Crusade</option>
-                  <option selected value="24">WotLK</option>
+                  <option value="1">Burning Crusade</option>
+                  <option selected value="2">WotLK</option>
                   </select></td>
                 
                 <TR>

@@ -46,8 +46,8 @@ function ModifyPassword(){
     if (!empty($error)) return false;
 
     # Gather Passwords & IP
-    $encrypted_oldpassword = sha1(strtoupper($_POST['login']).":".strtoupper($_POST['oldpassword'][1]));
-    $encrypted_newpassword = sha1(strtoupper($_POST['login']).":".strtoupper($_POST['newpassword'][1]));
+    $encrypted_oldpassword = SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$_POST['oldpassword']."')));
+    $encrypted_newpassword = SHA1(CONCAT(UPPER('".$_POST['login']."'), ':', ('".$_POST['newpassword']."')));
     $ip = $_SERVER['REMOTE_ADDR'];
     
     # Connect to database
@@ -67,7 +67,7 @@ function ModifyPassword(){
 
     # Check password in database
     if($config['EncryptedPass'])
-        $PassCheck = mysql_query("SELECT `encrypted_password` FROM `accounts` WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' AND `encrypted_password` = '{$encrypted_oldpassword}' LIMIT 1");
+        $PassCheck = mysql_query("SELECT `sha_pass_hash` FROM `account` WHERE `username` = '".mysql_real_escape_string($_POST['login'])."' AND `encrypted_password` = '{$encrypted_oldpassword}' LIMIT 1");
     else
         $PassCheck = mysql_query("SELECT `password` FROM `accounts` WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' AND `password` = '".mysql_real_escape_string($_POST['oldpassword'][1])."' LIMIT 1");
 
@@ -76,7 +76,7 @@ function ModifyPassword(){
 
     # Update password in database
     if($config['EncryptedPass'])
-        $query = "UPDATE `accounts` SET `encrypted_password`='{$encrypted_newpassword}' WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' AND encrypted_password='{$encrypted_oldpassword}' LIMIT 1";
+        $query = "UPDATE `account` SET `sha_pass_hash`='{$encrypted_newpassword}' WHERE `username` = '".mysql_real_escape_string($_POST['login'])."' AND sha_pass_hash='{$encrypted_oldpassword}' LIMIT 1";
     else
         $query = "UPDATE `accounts` SET `password`='".mysql_real_escape_string($_POST['newpassword'][1])."' WHERE `login` = '".mysql_real_escape_string($_POST['login'])."' AND `password` = '".mysql_real_escape_string($_POST['oldpassword'][1])."' LIMIT 1";
 
