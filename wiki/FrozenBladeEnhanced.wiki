@@ -1,5 +1,5 @@
-#summary One-sentence summary of this page.
-#labels Phase-Design,Phase-Deploy,Featured
+#summary What we are.
+#labels Phase-Design
 
 = Introduction =
 
