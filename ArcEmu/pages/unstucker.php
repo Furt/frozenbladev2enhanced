@@ -70,7 +70,7 @@ if(isset($_POST['submit']))
 	mysql_select_db($config['mysql_character']) or die(mysql_error());
 
 	//update the character table to set the character to hearth location
-	$query = "update characters SET positionX = bindpositionX, positionY = bindpositionY, positionZ = bindpositionZ, mapId = bindmapId, zoneId = bindzoneId, deathstate = 0 WHERE name = '".$character."'";
+	$query = "update characters SET player_flags = 0, positionX = bindpositionX, positionY = bindpositionY, positionZ = bindpositionZ, mapId = bindmapId, zoneId = bindzoneId, deathstate = 0, aura = NULL WHERE name = '".$character."'";
 
 	mysql_query($query) or die(mysql_error());
 	?>
