@@ -1,2 +1,0 @@
-# phpns automatically blocks directory listing (tested on Apache, that's it...)
-Options -Indexes
