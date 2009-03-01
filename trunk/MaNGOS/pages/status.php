@@ -6,54 +6,43 @@
 	  <center><img src="images/text/status.png"></center><br><br>
   <!-- script start -->
 <?php
-include "./lib/arrayXML.class.php";
-include "./lib/StatsXML.class.php";
-$xml = new StatsXML("./lib/stats.xml");
-echo '<br />';
-echo '<table align="center" border="1" width="340"><tr>';
-echo '<td>Average Latency: ' . $xml->getLatency() . ' ms</td>';
-echo '<td>Accepted Connections: ' . $xml->getAccCon () . '</td>';
-echo '</tr><tr>';
-echo '<td>Online Players: ' . $xml->getOnlinePlayers() . '</td>';
-echo '<td>Connection Peak: ' . $xml->getConPeak() . '</td>';
-echo '</tr><tr>';
-echo '<td>Gamemasters: ' . $xml->getGMs() . '</td>';
-echo '<td>Alliance: ' . $xml->getAlliance() . '</td>';
-echo '</tr><tr>';
-echo '<td>Queued Players: ' . $xml->getQplayers () . '</td>';
-echo '<td>Horde: ' . $xml->getHorde() . '</td';
-echo '</tr></table>';
-echo '<br /><br />';
-echo "<center><u>GM's Online</u></center>";
-echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Map</u></td><TD ALIGN="center"><u>Zone</u></td></thead>';
-foreach ($xml->getGMsArray() as $player) {
-echo '<tr><TD ALIGN="center">' . $player['name'] . '</td>';
-echo '<TD ALIGN="center">' . convertFaction($player['race']) . '</td>';
-echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . $player['gender'] . '.gif" alt=""></td>';
-echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
-echo '<TD ALIGN="center">' . $player['level'] . '</td>';
-echo '<TD ALIGN="center">' . convertMap($player['map']) . '</td>';
-echo '<TD ALIGN="center">' . convertZone($player['areaid']) . '</td></tr>';
-}
-echo '</table>';
-echo '<br />';
-echo '<center><u>Players Online</u></center>';
-echo '<table align="center"><thead><TD ALIGN="center"><u>Name</u></td><TD ALIGN="center"><u>Faction</u></td><TD ALIGN="center"><u>Race</u></td><TD ALIGN="center"><u>Class</u></td><TD ALIGN="center"><u>Level</u></td><TD ALIGN="center"><u>Map</u></td><TD ALIGN="center"><u>Zone</u></td></thead>';
-foreach ($xml->getPlayersArray() as $player) {
-echo '<tr><TD ALIGN="center">' . $player['name'] . '</td>';
-echo '<TD ALIGN="center">' . convertFaction($player['race']) . '</td>';
-echo '<TD ALIGN="center"><img src="images/char/race/' . $player['race'] . '-' . $player['gender'] . '.gif" alt=""></td>';
-echo '<TD ALIGN="center"><img src="images/char/class/' . $player['class'] . '.gif" alt=""></td>';
-echo '<TD ALIGN="center">' . $player['level'] . '</td>';
-echo '<TD ALIGN="center">' . convertMap($player['map']) . '</td>';
-echo '<TD ALIGN="center">' . convertZone($player['areaid']) . '</td></tr>';
-}
-echo '</table>';
-echo '<br />';
-echo '<br /><center>';
-echo 'Uptime: ' . $xml->getUptime();
-echo '</center><br />';
+$character = array(
+'db_host' => 'localhost',		//ip of db realm
+'db_username' => 'root',		//character user
+'db_password' => '****',	//character password
+'db_name' => 'characters',			//character db name
+);
+include('function.inc.php');
+
 ?>
+<table border="1" align="center"><tr><td align="center">Name</td><td align="center">Faction</td><td align="center">Race</td>
+<td align="center">Class</td><td align="center">Level</td><td align="center">Map</td><td align="center">Zone</td></tr>
+<?php	
+$connect = mysql_connect($character[db_host],$character[db_username],$character[db_password]);
+$selectdb = mysql_select_db($character[db_name],$connect);
+if (!$connect || !$selectdb){
+echo "Could NOT connect, Please check the config.";
+die;
+}
+$query = "SELECT CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(`data`, ' ', 54), ' ', -1) AS UNSIGNED) AS `level`, `name`, `race`, `class` FROM `characters` WHERE `online` =1"; 
+$result = mysql_query($query) or die(mysql_error());
+
+        $data = explode(' ',$row['data']);
+        $gender = dechex($data[22]);
+        $gender = str_pad($gender,16, 0, STR_PAD_LEFT);
+        $gender = $gender{3};
+		
+while($row = mysql_fetch_array($result)){
+	echo '<tr><td align="center">'. $row['name'] .'</td>';
+	echo '<td align="center">'. convertFaction($row['race']) .'</td>';
+	echo '<td align="center"><img src="./images/char/' . $row['race'] . '-' . $gender . '.gif" alt=""></td>';
+	echo '<td align="center"><img src="./images/char/' . $row['class'] . '.gif" alt=""></td>';
+	echo '<td align="center">'. $row['level'] .'</td>';
+	echo '<td align="center">'. convertMap($row['map']) .'</td>';
+	echo '<td align="center">'. convertZone($row['zone']) .'</td></tr>';
+}
+?>
+</table>
 <!-- Just a place to add personal notes to the page -->
 <center><?php echo($config['Note']); ?></center>
           <!-- script stop -->
