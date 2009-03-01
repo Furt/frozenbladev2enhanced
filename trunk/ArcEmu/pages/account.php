@@ -18,9 +18,6 @@
 
 error_reporting(E_ALL ^ E_NOTICE);
 
-if(!session_id())
-    session_start();
-
 $msg = Array();
 $error = Array();
 
