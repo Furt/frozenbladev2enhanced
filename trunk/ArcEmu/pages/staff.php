@@ -19,74 +19,7 @@
 			<img src="images/text/admin.png">	
 </div></div><div class="story2"><center><div style="width:400px; text-align:left"><center><br/><br/>
 
-				<!-- Start Staff Member --><!-- Start Staff Member -->
-				<!-- Start Staff Member --><!-- Start Staff Member -->
 
-<div class="bg1"><div class="bg2"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="140" height="100%" valign="top"><div class="box1"><div class="charbg">
-
-	<!-- character details -->
-			<!-- please refer to the guide to change character details -->
-	
-			<div class="nightelf-female"></div>
-			<div class="hunter"></div>
-			<div class="alliance"></div>
-</div><div class="userpic">
-
-	<!-- user image -->
-
-				<img src="images/user/47.gif" />
-</div><div class="user">
-
-	<!-- name and position -->
-	
-			<b>Kitten</b><br/>			Web Designer
-</div></div>
-</div></td><td height="100%" valign="top"><div class="box2"><br>
-
-	<!-- general information -->
-			
-&nbsp;			Name: 				??				<br/>
-&nbsp;			Location: 			??				<br/>
-&nbsp;			Age: 				??				<br/><br/>
-&nbsp;			Information: 		??				</div></td></tr></table></div></div><br/>
-
-				<!-- End Staff Member --><!-- End Staff Member -->
-				<!-- End Staff Member --><!-- End Staff Member -->
-
-				<!-- Start Staff Member --><!-- Start Staff Member -->
-				<!-- Start Staff Member --><!-- Start Staff Member -->
-
-<div class="bg1"><div class="bg2"><table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="140" height="100%" valign="top"><div class="box1"><div class="charbg">
-
-	<!-- character details -->
-			<!-- please refer to the guide to change character details -->
-	
-			<div class="bloodelf-male"></div>
-			<div class="paladin"></div>
-			<div class="horde"></div>
-</div><div class="userpic">
-
-	<!-- user image -->
-
-				<img src="images/user/19.gif">
-</div><div class="user">
-
-	<!-- name and position -->
-	
-			<b>DJRavine</b><br/>			PHP Coder
-</div></div>
-</div></td><td height="100%" valign="top"><div class="box2"><br>
-
-	<!-- general information -->
-			
-&nbsp;			Name: 				??				<br/>
-&nbsp;			Location: 			??				<br/>
-&nbsp;			Age: 				??				<br/><br/>
-&nbsp;			Information: 		??				</div></td></tr></table></div></div><br/>
-
-				<!-- End Staff Member --><!-- End Staff Member -->
-				<!-- End Staff Member --><!-- End Staff Member -->
-				
 				<!-- Start Staff Member --><!-- Start Staff Member -->
 				<!-- Start Staff Member --><!-- Start Staff Member -->
 
